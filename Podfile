@@ -6,27 +6,28 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 def shared_pods
   
-  pod 'MyHelloWord',      :path => '../MyHelloWord'
-  pod 'LearnRAC',         :path => '../LearnRAC'
-  #  pod 'SwiftDemo',        :path => '../SwiftDemo'
+  pod 'MultithreadingKnowledge',:git => 'https://github.com/Andrew5/MultithreadingKnowledge.git' #,:path => '../MultithreadingKnowledge'
+  pod 'BlockKnowledge',:git => 'https://github.com/Andrew5/BlockKnowledge.git'#, :path => '../BlockKnowledge'
+  pod 'DHBasicKnowledge',:git => 'https://github.com/Andrew5/BlockKnowledge.git'#, :path => '../DHBasicKnowledge'
+
+  #  pod 'SwiftDemo',:path => '../SwiftDemo'
   #  pod 'WaterMarkAssemble',:path => '../WaterMarkAssemble'
   pod 'GlobalButtonSwift'#,:git => 'https://github.com/Andrew5/GlobalButtonSwift.git'
+  pod 'GlobalButton'#,:path => '../GlobalButton',:subspecs => ['complex']
+  pod 'MyPodTestPro'#,:path => '../MyPodTestPro',:subspecs => ['Pro'] #:configurations => ['Pro']#:podspec => 'https://example.com/JSONKit.podspec'
+#  pod 'MyPodTestPro/Pro',:path => '../MyPodTestPro'
+  pod 'MVVMTableViewDemo'#,:path => '../MVVMTableViewDemo'
+  
+  pod 'MyHelloWord',      :path => '../MyHelloWord'
+  pod 'LearnRAC',         :path => '../LearnRAC'
   pod 'IMChatKeyboards',  :path => '../IMChatKeyboards'
-  pod 'GlobalButton',     :path => '../GlobalButton',:subspecs => ['complex']
-  pod 'DHBasicKnowledge', :path => '../DHBasicKnowledge'
-  pod 'MyPodTestPro',     :path => '../MyPodTestPro',:subspecs => ['Pro'] #:configurations => ['Pro']#:podspec => 'https://example.com/JSONKit.podspec'
-  pod 'MyPodTestPro/Pro', :path => '../MyPodTestPro'
   pod 'MVPGrowthModel',   :path => '../MVPGrowthModel'
-  pod 'GlobalButton',     :path => '../GlobalButton', :subspecs => ['complex']
   pod 'CustomerScroller', :path => '../CustomerScroller'
-  pod 'MVVMTableViewDemo',:path => '../MVVMTableViewDemo'
   pod 'CategoryRelyon',   :path => '../CategoryRelyon'
-  pod 'BlockKnowledge',   :path => '../BlockKnowledge'
   pod 'DHUIKitModule',    :path => '../DHUIKitModule'
   pod 'TouchBut',         :path => '../TouchBut'
   pod 'FliqloClick',      :path => '../FliqloClick'
   pod 'DHTabBar',         :path => '../DHTabBar'
-  pod 'MultithreadingKnowledge',:path => '../MultithreadingKnowledge'
   #待修复
   pod 'RHScan',           :path => '../RHScan'
   pod 'QRCode',           :path => '../QRCode'
