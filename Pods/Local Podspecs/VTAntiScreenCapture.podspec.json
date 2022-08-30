@@ -1,0 +1,22 @@
+{
+  "name": "VTAntiScreenCapture",
+  "version": "0.1.0",
+  "summary": "A simple iOS SDK for anti screen capture",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/mightyme@qq.com/VTAntiScreenCapture",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Vincent": "mightyme@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/mightyme@qq.com/VTAntiScreenCapture.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "VTAntiScreenCapture/Classes/**/*"
+}

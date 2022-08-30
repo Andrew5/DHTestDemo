@@ -1,0 +1,6 @@
+framework module FliqloClick {
+  umbrella header "FliqloClick-umbrella.h"
+
+  export *
+  module * { export * }
+}

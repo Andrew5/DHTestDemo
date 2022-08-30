@@ -1,0 +1,33 @@
+{
+  "name": "DHBasicKnowledge",
+  "version": "0.1.0",
+  "summary": "A short description of DHBasicKnowledge.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/localhost3585@gmail.com/DHBasicKnowledge",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "localhost3585@gmail.com": "localhost3585@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/localhost3585@gmail.com/DHBasicKnowledge.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "DHBasicKnowledge/Classes/**/*",
+  "dependencies": {
+    "Masonry": [
+
+    ],
+    "CategoryRelyon": [
+
+    ],
+    "YogaKit": [
+
+    ]
+  }
+}

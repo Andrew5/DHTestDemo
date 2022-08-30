@@ -1,0 +1,94 @@
+{
+  "name": "MyPodTestPro",
+  "version": "0.1.0",
+  "summary": "A short description of MyPodTestPro.",
+  "source": {
+    "git": "https://github.com/localhost3585@gmail.com/MyPodTestPro.git",
+    "tag": "0.1.0"
+  },
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/localhost3585@gmail.com/MyPodTestPro",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "localhost3585@gmail.com": "localhost3585@gmail.com"
+  },
+  "requires_arc": true,
+  "default_subspecs": "Pro",
+  "platforms": {
+    "ios": "10.0"
+  },
+  "frameworks": "CoreServices",
+  "pod_target_xcconfig": {
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
+  },
+  "subspecs": [
+    {
+      "name": "Public",
+      "source_files": "Class/**/*.{h,m}",
+      "public_header_files": [
+        "Class/TestEvn.h",
+        "Class/TViewController.h"
+      ],
+      "platforms": {
+        "ios": "10.0"
+      }
+    },
+    {
+      "name": "Pro",
+      "dependencies": {
+        "MyPodTestPro/Public": [
+
+        ]
+      },
+      "resources": "Class/Releasebasedata.txt",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "PRO=1"
+      }
+    },
+    {
+      "name": "Uat",
+      "dependencies": {
+        "MyPodTestPro/Public": [
+
+        ]
+      },
+      "resources": "Class/Debugbasedata.txt",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "UAT=1"
+      }
+    },
+    {
+      "name": "Sit",
+      "dependencies": {
+        "MyPodTestPro/Public": [
+
+        ]
+      },
+      "resources": "Class/Debugbasedata.txt",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "SIT=1"
+      }
+    },
+    {
+      "name": "Debug",
+      "dependencies": {
+        "MyPodTestPro/Public": [
+
+        ]
+      },
+      "resources": "Class/Debugbasedata.txt"
+    },
+    {
+      "name": "Release",
+      "dependencies": {
+        "MyPodTestPro/Public": [
+
+        ]
+      },
+      "resources": "Class/Debugbasedata.txt"
+    }
+  ]
+}

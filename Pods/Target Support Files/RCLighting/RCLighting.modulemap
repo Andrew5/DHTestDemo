@@ -1,0 +1,6 @@
+framework module RCLighting {
+  umbrella header "RCLighting-umbrella.h"
+
+  export *
+  module * { export * }
+}

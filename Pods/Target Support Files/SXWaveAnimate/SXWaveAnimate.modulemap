@@ -1,0 +1,6 @@
+framework module SXWaveAnimate {
+  umbrella header "SXWaveAnimate-umbrella.h"
+
+  export *
+  module * { export * }
+}

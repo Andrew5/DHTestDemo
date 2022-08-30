@@ -1,0 +1,6 @@
+framework module IMChatKeyboards {
+  umbrella header "IMChatKeyboards-umbrella.h"
+
+  export *
+  module * { export * }
+}

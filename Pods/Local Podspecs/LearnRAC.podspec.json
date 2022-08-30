@@ -1,0 +1,27 @@
+{
+  "name": "LearnRAC",
+  "version": "0.1.0",
+  "summary": "A short description of LearnRAC.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jabraknight/LearnRAC",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jabraknight": "localhost3585@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/jabraknight/LearnRAC.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "LearnRAC/Classes/**/*",
+  "dependencies": {
+    "ReactiveObjC": [
+
+    ]
+  }
+}

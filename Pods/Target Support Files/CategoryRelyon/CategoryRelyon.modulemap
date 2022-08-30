@@ -1,0 +1,6 @@
+framework module CategoryRelyon {
+  umbrella header "CategoryRelyon-umbrella.h"
+
+  export *
+  module * { export * }
+}

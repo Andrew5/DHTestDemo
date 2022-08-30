@@ -1,0 +1,6 @@
+framework module GlobalButton {
+  umbrella header "GlobalButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

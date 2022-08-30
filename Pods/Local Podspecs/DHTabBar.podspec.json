@@ -1,0 +1,32 @@
+{
+  "name": "DHTabBar",
+  "version": "0.1.0",
+  "summary": "A short description of DHTabBar.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "/Users/jabraknight/Documents/Jabraknightty/customer",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Mr. Zhao": "localhost3585@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Mr. Zhao/DHTabBar.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "DHTabBar/Classes/**/*.{h,m}",
+  "public_header_files": "DHTabBar/Class/**/*.h",
+  "resources": "DHTabBar/Assets/Tabbar",
+  "pod_target_xcconfig": {
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
+  },
+  "dependencies": {
+    "GlobalButton": [
+
+    ]
+  }
+}

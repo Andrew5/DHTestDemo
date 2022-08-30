@@ -1,0 +1,23 @@
+{
+  "name": "TouchBut",
+  "version": "0.1.0",
+  "summary": "A short description of TouchBut.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/localhost3585@gmail.com/TouchBut",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "localhost3585@gmail.com": "localhost3585@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/localhost3585@gmail.com/TouchBut.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "TouchBut/Classes/**/*",
+  "public_header_files": "Pod/Classes/**/*.h"
+}

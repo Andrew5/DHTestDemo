@@ -1,0 +1,6 @@
+framework module BlockKnowledge {
+  umbrella header "BlockKnowledge-umbrella.h"
+
+  export *
+  module * { export * }
+}

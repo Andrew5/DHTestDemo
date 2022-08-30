@@ -1,0 +1,32 @@
+{
+  "name": "DHUIKitModule",
+  "version": "0.1.0",
+  "summary": "A short description of DHUIKitModule.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jabraknight/DHUIKitModule",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jabraknight": "localhost3585@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/jabraknight/DHUIKitModule.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "DHUIKitModule/Classes/**/*",
+  "dependencies": {
+    "lottie-ios": [
+      "~> 2.5.3"
+    ]
+  },
+  "resource_bundles": {
+    "DHProgressHUD": [
+      "DHUIKitModule/Assets/*.{png,json,imageset}"
+    ]
+  }
+}

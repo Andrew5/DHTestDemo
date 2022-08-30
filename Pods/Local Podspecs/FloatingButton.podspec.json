@@ -1,0 +1,72 @@
+{
+  "name": "FloatingButton",
+  "version": "0.0.3",
+  "summary": "FloatingButton",
+  "description": "Floating Button",
+  "homepage": "https://github.com/DanboDuan/FloatingButton",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "bob": "bob170131@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/DanboDuan/FloatingButton.git",
+    "tag": "0.0.3"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "default_subspecs": "Picker",
+  "subspecs": [
+    {
+      "name": "Utility",
+      "source_files": "FloatingButton/Utility/**/*.{h,m}",
+      "public_header_files": "FloatingButton/Utility/*.h"
+    },
+    {
+      "name": "Core",
+      "source_files": "FloatingButton/Core/**/*.{h,m}",
+      "public_header_files": "FloatingButton/Core/Header/*.h",
+      "dependencies": {
+        "FloatingButton/Utility": [
+
+        ]
+      }
+    },
+    {
+      "name": "Wrapper",
+      "source_files": "FloatingButton/Wrapper/**/*.{h,m}",
+      "public_header_files": "FloatingButton/Wrapper/*.h",
+      "dependencies": {
+        "FloatingButton/Core": [
+
+        ],
+        "FloatingButton/Utility": [
+
+        ]
+      }
+    },
+    {
+      "name": "Picker",
+      "source_files": "FloatingButton/Picker/**/*.{h,m}",
+      "public_header_files": "FloatingButton/Picker/Header/*.h",
+      "dependencies": {
+        "FloatingButton/Utility": [
+
+        ],
+        "FloatingButton/Wrapper": [
+
+        ],
+        "FloatingButton/Core": [
+
+        ]
+      }
+    }
+  ]
+}

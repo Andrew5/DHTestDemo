@@ -1,0 +1,29 @@
+{
+  "name": "MyHelloWord",
+  "version": "0.1.0",
+  "summary": "A short description of MyHelloWord.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/localhost3585@gmail.com/MyHelloWord",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "localhost3585@gmail.com": "localhost3585@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/localhost3585@gmail.com/MyHelloWord.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "Class/*.{h,m}",
+  "public_header_files": "Class/*.h",
+  "frameworks": "CoreServices",
+  "dependencies": {
+    "fishhook": [
+
+    ]
+  }
+}

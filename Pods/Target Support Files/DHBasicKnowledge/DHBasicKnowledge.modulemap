@@ -1,0 +1,6 @@
+framework module DHBasicKnowledge {
+  umbrella header "DHBasicKnowledge-umbrella.h"
+
+  export *
+  module * { export * }
+}

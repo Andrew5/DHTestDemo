@@ -1,0 +1,6 @@
+framework module DHUIKitModule {
+  umbrella header "DHUIKitModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module RHScan {
+  umbrella header "RHScan-umbrella.h"
+
+  export *
+  module * { export * }
+}

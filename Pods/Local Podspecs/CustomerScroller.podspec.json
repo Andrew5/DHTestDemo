@@ -1,0 +1,27 @@
+{
+  "name": "CustomerScroller",
+  "version": "0.1.0",
+  "summary": "A short description of CustomerScroller.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/localhost3585@gmail.com/CustomerScroller",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "localhost3585@gmail.com": "localhost3585@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/localhost3585@gmail.com/CustomerScroller.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "CustomerScroller/Classes/**/*",
+  "dependencies": {
+    "Masonry": [
+
+    ]
+  }
+}

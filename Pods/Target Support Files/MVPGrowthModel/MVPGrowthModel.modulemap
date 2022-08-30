@@ -1,0 +1,6 @@
+framework module MVPGrowthModel {
+  umbrella header "MVPGrowthModel-umbrella.h"
+
+  export *
+  module * { export * }
+}
