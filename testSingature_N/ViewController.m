@@ -26,6 +26,16 @@
 #import "testSingature_N-Swift.h"
 #import "DHButton.h"
 
+#include <netdb.h>
+#include <net/if.h>
+#include <ifaddrs.h>
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#import <dlfcn.h>
+#import <netinet/in.h>
+#import <mach/mach.h>
+#import <os/proc.h>
+
 // pod install --verbose --no-repo-update //只安装新添加的库，已更新的库忽略
 // pod update 类库名称 --verbose --no-repo-update // 只更新指定的库，其它库忽略
 
@@ -95,8 +105,7 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
     } else {
         // Fallback on earlier versions
     }
-    [self test15];
-
+    [self testView];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -378,7 +387,7 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
     NSString *testString = array[2];
     NSLog(@"测试结果 %@",testString);
 }
-
+/// TODO: swift
 - (void)test15 {
     
     // A(swift) push B(oc)
@@ -430,5 +439,82 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
 //- (void)myButtonDidTap:(DHButton *)sender {
 //    NSLog(@"我是Delegate: Did");
 //}
+- (void)testView {
+
+    UIView *viewRed = [[UIView alloc]init];
+    [self.view addSubview:viewRed];
+    CGFloat x = 10;
+    CGFloat h = 200;
+    CGFloat y = ([UIScreen mainScreen].bounds.size.height - h)/2;
+    CGFloat w = [UIScreen mainScreen].bounds.size.width - x*2;
+    viewRed.frame = CGRectMake(x, y, w, h);
+    viewRed.backgroundColor = UIColor.redColor;
+    
+    UIView *viewYellwo = [[UIView alloc]init];
+    [self.view addSubview:viewYellwo];
+    viewYellwo.frame = CGRectMake(10, 100, 100, 100);
+    viewYellwo.backgroundColor = UIColor.yellowColor;
+    
+    UIView *viewBlack = [[UIView alloc]init];
+    [self.view addSubview:viewBlack];
+    viewBlack.backgroundColor = UIColor.blackColor;
+    CGFloat ww = (100)*[UIScreen mainScreen].bounds.size.height/750;
+    viewBlack.frame = CGRectMake(10, 100, ww, ww);
+    
+}
+
+- (void)foo {
+    NSMutableArray *arr = [[NSMutableArray alloc]initWithCapacity:10];
+    while (1) {
+        for (int i = 0; i < 10; i++) {
+            UIImageView *vv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"erweima"]];
+            [arr addObject:vv];
+        }
+        
+        ViewController *vc= [[ViewController alloc]init];
+        long aa = [ViewController footprintMemory];
+        NSLog(@"%l",aa);
+        [vc limitMemory];
+    }
+}
+
++ (long)footprintMemory {
+    task_vm_info_data_t vmInfo;
+    mach_msg_type_number_t count = TASK_VM_INFO_COUNT;
+    kern_return_t result = task_info(mach_task_self(), TASK_VM_INFO, (task_info_t) &vmInfo, &count);
+    if (result != KERN_SUCCESS)
+        return 0;
+    return (long long)(vmInfo.phys_footprint);
+}
+
+- (long)limitMemory {
+    if (@available(iOS 13.0, *)) {
+        long availMem = os_proc_available_memory();
+    }
+    return 0;
+}
+
+// 为 layer 的动画设置不同的 anchor point，但是又不想改变 view 原来的 position，则需要做一些转换。
+- (void)setAnchorPoint:(CGPoint)anchorPoint forView:(UIView *)view {
+    // 分别计算原来锚点和将更新的锚点对应的坐标点，这些坐标点是相对该 view 内部坐标系的。
+    CGPoint oldPoint = CGPointMake(view.bounds.size.width * view.layer.anchorPoint.x,
+                                   view.bounds.size.height * view.layer.anchorPoint.y);
+    CGPoint newPoint = CGPointMake(view.bounds.size.width * anchorPoint.x,
+                                   view.bounds.size.height * anchorPoint.y);
+
+    // 如果当前 view 有做过 transform，这里要同步计算。
+    oldPoint = CGPointApplyAffineTransform(oldPoint, view.transform);
+    newPoint = CGPointApplyAffineTransform(newPoint, view.transform);
+
+    // position 是当前 view 的 anchor point 在其父 view 的位置。
+    CGPoint position = view.layer.position;
+    // anchor point 的改变会造成 position 的改变，从而影响 view 在其父 view 的位置，这里把这个位移给计算回来。
+    position.x = position.x + newPoint.x - oldPoint.x;
+    position.y = position.y + newPoint.y - oldPoint.y;
+
+    view.translatesAutoresizingMaskIntoConstraints = YES;
+    view.layer.anchorPoint = anchorPoint; // 设置了新的 anchor point 会改变位置。
+    view.layer.position = position; // 通过在 position 上做逆向偏移，把位置给移回来。
+}
 
  @end

@@ -16,6 +16,7 @@ typedef void (^DHOutOfMemoryEventHandler)(BOOL wasInForeground);
 + (instancetype)sharedInstance;
 - (void)beginMonitoringMemoryEventsWithHandler:(nonnull DHOutOfMemoryEventHandler)handler;
 - (void)appDidCrash;
++ (void)放弃方法 __attribute__((deprecated("此方法已弃用")));
 
 @end
 

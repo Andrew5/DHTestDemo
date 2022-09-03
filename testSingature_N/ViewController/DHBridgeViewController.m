@@ -41,6 +41,32 @@
 
 }
 /*
+ // 计算cell高度
+ - (CGFloat)tableView:(UITableView *)tableView :(NSIndexPath *)indexPath {
+     Model *model = [self.dataArray objectAtIndex:indexPath.row];
+     return [Cell cellHeightWith:model];
+ }
+ 
+ + (CGFloat)cellHeightWith:(Model *)model{
+     CGFloat cellHeight = 60;
+     if (model && model.expand) {
+         NSString *log = model.content;
+         NSTimeInterval timeInterval = model.timeInterval;
+         NSString *time = [DHDate dateFormatTimeInterval:timeInterval];
+         NSString *content = [NSString stringWithFormat:LocalizedString(@"%@\n触发时间: %@"),log,time];
+         
+         UILabel *logLabel = [[UILabel alloc] init];
+         logLabel.textColor = [UIColor redCole];
+         logLabel.font = [UIFont systemFontOfSize:24];
+         logLabel.text = content;
+         logLabel.numberOfLines = 0;
+         CGSize size = [logLabel sizeThatFits:CGSizeMake(kScreenWidth-kSizeFrom750_Landscape(32)*2-kSizeFrom750_Landscape(25)-kSizeFrom750_Landscape(12)*2, MAXFLOAT)];
+         cellHeight = kSizeFrom750_Landscape(10) + size.height + kSizeFrom750_Landscape(10);
+     }
+     return cellHeight;
+ }
+ */
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
