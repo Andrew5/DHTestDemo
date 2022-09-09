@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import SwiftUI
 class TitleArrowView: UIView {
     //    var nameStr = NSString()
     var _nameStr:String?
@@ -158,4 +159,21 @@ class TitleArrowView: UIView {
 //                return self.newModel
 //            }
 //        }
+    
+}
+extension TitleArrowView:aaa,bbb,ccc{
+
+    
+    func testA() {
+        
+    }
+    func testC() -> UIView & aaa {
+        return TitleArrowView()
+    }
+    func testD(_ test: String, _ n: aaa & bbb) -> UIView & aaa {
+        return TitleArrowView()
+    }
+    func testE(_ text: String) -> UIView & aaa {
+        return TitleArrowView()
+    }
 }

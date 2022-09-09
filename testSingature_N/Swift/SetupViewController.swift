@@ -60,7 +60,7 @@ import CoreLocation
     override func viewDidLoad() {
         //tableview
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .white
 
         sectionThree = ["隐私设置","开机设置","当前版本","关于我们"]
         sectionTwo = ["实名认证","账号切换","账号安全"]
@@ -76,7 +76,8 @@ import CoreLocation
         //requestAlwaysAuthorization;                             //始终授权
         locationManager.startUpdatingLocation()
         print("开始定位 。。。")
-        setupUI()
+//        setupUI()
+        xxxView()
         var str = {
             (arg1:String,arg2:String)->String in
             return arg1+"_"+arg2;
@@ -159,7 +160,34 @@ extension Int {
     }
 }
 
-
+extension SetupViewController {
+    func xxxView () {
+        // 不会产生离屏渲染的方案
+        let imageView1 = UIImageView()
+        imageView1.frame = .init(x: 100, y: 10, width: 60, height: 60)
+        // 设置背景颜色
+        imageView1.backgroundColor = .red
+        // 设置圆角
+        imageView1.layer.cornerRadius = 30
+        // 关闭 masksToBounds
+        imageView1.layer.masksToBounds = false
+        view.addSubview(imageView1)
+        // 亦或
+        let imageView2 = UIImageView()
+        imageView2.frame = .init(x: 100, y: 90, width: 60, height: 60)
+        imageView2.backgroundColor = .red
+        imageView2.layer.cornerRadius = 30
+        imageView2.layer.masksToBounds = true
+        view.addSubview(imageView2)
+        // 亦或
+        let imageView3 = UIImageView()
+        imageView3.frame = .init(x: 100, y: 170, width: 60, height: 60)
+        imageView3.layer.cornerRadius = 30
+        imageView3.layer.masksToBounds = true
+        imageView3.image = UIImage(named: "QQ")
+        view.addSubview(imageView3)
+    }
+}
 ///MARK:  -设置UI界面相关
 extension SetupViewController {
     /// 设置UI界面

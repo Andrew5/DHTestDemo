@@ -6,17 +6,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 def shared_pods
   
-  pod 'MultithreadingKnowledge',:git => 'https://github.com/Andrew5/MultithreadingKnowledge.git' #,:path => '../MultithreadingKnowledge'
-  pod 'BlockKnowledge',:git => 'https://github.com/Andrew5/BlockKnowledge.git'#, :path => '../BlockKnowledge'
-  pod 'DHBasicKnowledge',:git => 'https://github.com/Andrew5/BlockKnowledge.git'#, :path => '../DHBasicKnowledge'
 
   #  pod 'SwiftDemo',:path => '../SwiftDemo'
   #  pod 'WaterMarkAssemble',:path => '../WaterMarkAssemble'
   pod 'GlobalButtonSwift'#,:git => 'https://github.com/Andrew5/GlobalButtonSwift.git'
   pod 'GlobalButton'#,:path => '../GlobalButton',:subspecs => ['complex']
-  pod 'MyPodTestPro'#,:path => '../MyPodTestPro',:subspecs => ['Pro'] #:configurations => ['Pro']#:podspec => 'https://example.com/JSONKit.podspec'
-#  pod 'MyPodTestPro/Pro',:path => '../MyPodTestPro'
-  pod 'MVVMTableViewDemo'#,:path => '../MVVMTableViewDemo'
   
   pod 'MyHelloWord',      :path => '../MyHelloWord'
   pod 'LearnRAC',         :path => '../LearnRAC'
@@ -28,10 +22,18 @@ def shared_pods
   pod 'TouchBut',         :path => '../TouchBut'
   pod 'FliqloClick',      :path => '../FliqloClick'
   pod 'DHTabBar',         :path => '../DHTabBar'
+  
+  pod 'DHBasicKnowledge'  ,:path => '../DHBasicKnowledge'
+  pod 'BlockKnowledge'    ,:path => '../BlockKnowledge'
+  pod 'MyPodTestPro'      ,:path => '../MyPodTestPro',:subspecs => ['Pro'] #:configurations => ['Pro']#:podspec => 'https://example.com/JSONKit.podspec'
+  pod 'MVVMTableViewDemo' ,:path => '../MVVMTableViewDemo'
+  pod 'MultithreadingKnowledge',:path => '../MultithreadingKnowledge'
+
   #待修复
   pod 'RHScan',           :path => '../RHScan'
   pod 'QRCode',           :path => '../QRCode'
   pod 'VTAntiScreenCapture',:path => '../VTAntiScreenCapture'
+  
 end
 
 def commonlyUsed
@@ -53,11 +55,12 @@ def commonlyUsed
   #  pod 'PermissionKit',:git => 'https://github.com/lixiang1994/PermissionKit.git',:tag => '1.4.0'
   pod 'SDWebImage'
   pod 'SDWebImageWebPCoder'
-  pod 'YBImageBrowser', '~> 3.0.9'
+#  pod 'YBImageBrowser', '~> 3.0.9'
   #  pod 'FLAnimatedImage','~> 1.0.16'
   #  pod 'YQImageCompressor'
-  pod 'YYCategories'
-  pod 'YYText'
+#  pod 'YYCategories'
+#  pod 'YYText'
+  pod 'YYKit'
   pod 'SVProgressHUD'
   pod 'MBProgressHUD'
   pod 'IQKeyboardManager'
@@ -71,8 +74,8 @@ def commonlyUsed
   pod 'Moya'
   pod 'ObjectMapper','~> 3.5.2'
   pod 'HandyJSON'
-  pod 'SwiftyJSON'
   pod 'Kingfisher'
+  pod 'Alamofire'
   # 数据库
   pod 'FMDB' ,:git =>'https://github.com/ccgus/fmdb.git'#,             :source =>'https://github.com/CocoaPods/Specs.git'
   # 文件保存
@@ -103,6 +106,7 @@ def commonlyUsed
   #iOS防截屏/录屏的实现https://m.weibo.cn/status/4738671431911826?wm=3333_2001&from=10C2093010&sourcetype=weixin
   #  https://mp.weixin.qq.com/s/L8Bv7GmZ7uKYgeGCEX9lXA
   pod 'FDFullscreenPopGesture', '~> 1.1'
+  pod  'YKWoodpecker'
   # nsf_oc_demo
   #  iOS开发-图片离线鉴黄 基于TensorFlow nsfw oc版
   #  下载地址

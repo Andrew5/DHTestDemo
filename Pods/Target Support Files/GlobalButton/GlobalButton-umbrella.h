@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "DHGlobeManager.h"
 #import "DHGlobalConfig.h"
 #import "DHGlobalContentButton.h"
 #import "Unity.h"

@@ -25,6 +25,10 @@
 #import "DHSharedObject.h"
 #import "testSingature_N-Swift.h"
 #import "DHButton.h"
+#import "CategoryRelyon/UIView+Extension.h"
+#import <DHUIKitModule/DHUIKitModule-umbrella.h>
+#import "DHNetworkSpeed.h"
+#import "BNMarketModulesView.h"
 
 #include <netdb.h>
 #include <net/if.h>
@@ -58,6 +62,9 @@ static NSString *PAYTypeStringMap[] = {
     [PAYTypeCancel] = @"支付取消",
     [PAYTypeErrorparams] = @"参数错误"
 };
+
+#define PAYTypeString(num) (PAYType[num])
+
 //    PAYTypeStringMap[PAYTypeErrorparams]
 //元素的尺寸改变一个delta值
 static inline CGFloat UIAdapter(CGFloat x) {
@@ -73,7 +80,7 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
     return CGRectMake(UIAdapter(x), UIAdapter(y), UIAdapter(width), UIAdapter(height));
 }
 
-@interface ViewController ()<DHButtonDelegete>
+@interface ViewController ()<DHButtonDelegete,DHAlertViewDelegate>
 @property (nonatomic, strong) DHCustomAlertView *alertViewCustom;
 @property (nonatomic, copy) NSString *gmAnalyticsToken1;
 //动画
@@ -82,7 +89,12 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
 @property (nonatomic, strong) CADisplayLink *displaylinkTimer;
 //代理
 @property (nonatomic,  strong) DHSharedObject *sharedObject;
+// 测网速
+@property (nonatomic,  strong) DHNetworkSpeed *speedMonitor;
 
+@property (nonatomic,  strong) UIImageView *woodpeckerIcon;
+@property (nonatomic,  strong) UIView *contentView;
+@property (nonatomic,  strong) UIView *viewroot;
 @end
 
 @implementation ViewController
@@ -105,16 +117,52 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
     } else {
         // Fallback on earlier versions
     }
-    [self testView];
+    NSString *u = @"adfas";
+    if (!u) {
+        NSLog(@"空");
+    }
+    [self test23];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.speedMonitor stopNetworkSpeedMonitor];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NetworkDownloadSpeedNotificationKey object:nil];
+
+}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
     NSLog(@"%@",[self.alertViewCustom isDisplayedInScreen] ? @"显示" : @"隐藏");
 
-    [self.alertViewCustom close];
+    CGPoint point = [[touches  anyObject] locationInView:self.view];
+//    if ([self.alertViewCustom isDisplayedInScreen] == YES){
+//        point = [self.alertViewCustom.layer convertPoint:point fromLayer:self.view.layer];
+//        CALayer *layer = [self.alertViewCustom.layer hitTest:point];
+//        if (layer == self.alertViewCustom.layer) {
+//            [self.alertViewCustom close];
+//        }else{
+//            NSLog(@"touch other");
+//        }
+//    } else {
+        point = [_woodpeckerIcon.layer convertPoint:point fromLayer:self.view.layer];
+        if( [_woodpeckerIcon.layer containsPoint:point]){
+    //        point = [_contentView.layer convertPoint:point fromLayer:_woodpeckerIcon.layer]; //get layer using containsPoint:
+    //        if ([_contentView.layer containsPoint:point]) {
+    //            NSLog(@"点击imageview");
+    //        }
+            if (_contentView.width == 0) {
+                self->_contentView.width = 0100;
+                self->_contentView.height = 100;
+                _viewroot.width = 100.;
+                _viewroot.height = 100.;
+            }
+//        }
+    }
 }
 
 - (void)test1 {
+
     //    int a = 4;
     //    //第一个参数是条件,如果第一个参数不满足条件,就会记录和打印第二个参数
     //    NSAssert(a == 5, @"a must equal to 5");
@@ -129,7 +177,7 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
      2. [类 instancesRespondToSelector]判断的是该类的实例是否包含某方法，等效于：[该类的实例 respondsToSelector]。
      3. [类 respondsToSelector]用于判断是否包含某个类方法。
      */
-    NSLog(@"--%d",[UIScreen instancesRespondToSelector:@selector(currentMode)]);
+//    NSLog(@"UIScreen执行--%d",[UIScreen instancesRespondToSelector:@selector(currentMode)]);
     // 注册通知
     //    [[NSNotificationCenter defaultCenter] addObserverForName:@"block" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
     //        NSLog(@"block方式受到系统通知");
@@ -272,7 +320,7 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
     [self.sharedObject addDelegate:self dispathQueue:dispatch_get_main_queue()];
 }
 - (void)func {
-    NSLog(@"-------");
+    NSLog(@"---代理实现了----");
 }
 
 - (void)test11 {
@@ -393,12 +441,13 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
     // A(swift) push B(oc)
     // B input dismiss A
     // A block=^(string *dd){get string}
+//    DHCustomerAlertViewListController *vc = [[DHCustomerAlertViewListController alloc]init];
     SetupViewController *vc = [[SetupViewController alloc]init];
     self.view.backgroundColor = UIColor.whiteColor;
     // 注意添加顺序
     [self addChildViewController:vc];
     [self.view addSubview:vc.view];
-    vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 44*10);
 }
 
 //TODO: 自定义按钮、事件
@@ -439,30 +488,351 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
 //- (void)myButtonDidTap:(DHButton *)sender {
 //    NSLog(@"我是Delegate: Did");
 //}
-- (void)testView {
 
-    UIView *viewRed = [[UIView alloc]init];
-    [self.view addSubview:viewRed];
-    CGFloat x = 10;
-    CGFloat h = 200;
-    CGFloat y = ([UIScreen mainScreen].bounds.size.height - h)/2;
-    CGFloat w = [UIScreen mainScreen].bounds.size.width - x*2;
-    viewRed.frame = CGRectMake(x, y, w, h);
-    viewRed.backgroundColor = UIColor.redColor;
+- (void)test17 {
+    NSInvocationOperation * op1 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(invocationOperationMethod:) object:@"1"];
+    NSInvocationOperation * op2 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(invocationOperationMethod:) object:@"2"];
+    NSInvocationOperation * op3 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(invocationOperationMethod:) object:@"3"];
+    NSInvocationOperation * op4 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(invocationOperationMethod:) object:@"4"];
     
-    UIView *viewYellwo = [[UIView alloc]init];
-    [self.view addSubview:viewYellwo];
-    viewYellwo.frame = CGRectMake(10, 100, 100, 100);
-    viewYellwo.backgroundColor = UIColor.yellowColor;
-    
-    UIView *viewBlack = [[UIView alloc]init];
-    [self.view addSubview:viewBlack];
-    viewBlack.backgroundColor = UIColor.blackColor;
-    CGFloat ww = (100)*[UIScreen mainScreen].bounds.size.height/750;
-    viewBlack.frame = CGRectMake(10, 100, ww, ww);
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    //    queue.maxConcurrentOperationCount = 1;//串行
+    queue.maxConcurrentOperationCount = 2;//并发
+    //    queue.maxConcurrentOperationCount = 0;//不执行任务
+    //    queue.maxConcurrentOperationCount = -1;//特殊意义 最大值 表示不受限制
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperation:op3];
+    [queue addOperation:op4];
+}
+- (void)invocationOperationMethod:(NSString *)params {
+    NSLog(@"--%@--%@",params,[NSThread currentThread]);
+}
+
+- (void)test18 {
+    DHActionLinkLabel* p = [[DHActionLinkLabel alloc]initWithFrame:CGRectMake(40, 132, 100, 20)];
+    p.backgroundColor = [UIColor clearColor];
+    p.textAlignment   = NSTextAlignmentCenter;
+    p.textColor       = [UIColor whiteColor];
+    p.font = [UIFont systemFontOfSize:18.0];
+    p.userInteractionEnabled = YES;
+    p.didTouch = @selector(actionTitle:);
+    p.delegate = self;
+    p.changeAlpha = NO;
+    [self.view addSubview:p];
+}
+- (void)actionTitle:(SEL)a {
     
 }
 
+- (void)test19 {
+    __block int num = 0;
+    dispatch_queue_t que = dispatch_get_global_queue(0, 0);
+    for (int i = 0; i<10; i++) {
+        dispatch_async(que, ^{
+            num = i;
+        });
+    }
+    NSLog(@"%d",num);
+    
+    
+}
+
+- (void)test20 {
+    
+    DHAlertView *alertView = [[DHAlertView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    alertView.delegate = self;
+    [alertView show];
+}
+- (void)alertView:(DHAlertView *)alertView didSelectedOptionButtonWithTag:(NSInteger)index {
+    [alertView dismiss];
+}
+
+- (void)test21 {
+    NSArray *arrTest = @[@{@"tagname":@"满足",@"tagtype":@"1"},@{@"tagname":@"等沙发上",@"tagtype":@"2"},@{@"tagname":@"满足啊的沙发上",@"tagtype":@"3"}];
+ //   for (int i = 0; i < arrTest.count; i++) {
+ //       NSLog(@"");
+ //   }
+ //   //参数为倒序遍历
+ //   [arrTest enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+ //        NSLog(@"%@",obj[@"tagtype"]);
+ //    }];
+ // 默认为正序遍历
+    __block UILabel *label;
+    [arrTest enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@",obj[@"tagtype"]);
+        UILabel *tagLabel = [[UILabel alloc] init];
+        tagLabel.textColor = UIColor.redColor;
+        tagLabel.backgroundColor = UIColor.blueColor;
+        CGSize textSize = [obj[@"tagname"] boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 1) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size;
+        if (idx == 0) {
+            tagLabel.frame = CGRectMake(10+8, 45, 28 + 8, 16);
+        } else {
+            tagLabel.frame = CGRectMake(CGRectGetMaxX(label.frame) + 8, 45, textSize.width + 22, 16);
+        }
+        tagLabel.text = obj[@"tagname"];//[NSString stringWithFormat:@"%@",obj.tagName];
+        label = tagLabel;
+        [self.view addSubview:label];
+    }];
+//    //第一种，OC自带方法
+//     //默认为正序遍历
+//     [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//         NSLog(@"%ld,%@",idx,[arr objectAtIndex:idx]);
+//     }];
+//     //NSEnumerationReverse参数为倒序遍历
+//     [arr enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//         NSLog(@"%ld,%@",idx,[arr objectAtIndex:idx]);
+//     }];
+//
+//     //第二种
+//     dispatch_apply([arr count], dispatch_get_global_queue(0, 0), ^(size_t index){//并行
+//         NSLog(@"%ld,%@",index,[arr objectAtIndex:index]);
+//     });
+//
+//     //第三种
+//     dispatch_apply([arr count], dispatch_get_main_queue(), ^(size_t index){//串行，容易引起主线程堵塞，可以另外开辟线程
+//         NSLog(@"%ld,%@",index,[arr objectAtIndex:index]);
+//     });
+//
+//     // 第四种，快速遍历
+//     for (NSString * str in arr) {
+//         NSLog(@"%@",str);
+//     }
+//
+//     // 第五种，do-while
+//     int i = 0;
+//     do {
+//         NSLog(@"%@",[arr objectAtIndex:i]);
+//         i++;
+//     } while (i<[arr count]);
+//
+//     // 第六种，while-do
+//     int j = 0;
+//     while (j<[arr count]) {
+//         NSLog(@"%@",[arr objectAtIndex:j]);
+//         j++;
+//     }
+//
+//     // 第七种，普通for循环
+//     for (int m = 0; m<[arr count]; m++) {
+//         NSLog(@"%@",[arr objectAtIndex:m]);
+//     }
+//
+//     // 第八种，迭代器
+//     NSEnumerator *en = [arr objectEnumerator];
+//     id obj;
+//     NSInteger j = 0 ;
+//     while (obj = [en nextObject]) {
+//      NSLog(@"%ld,%@",j,obj);
+//         j++;
+//     }
+    
+}
+
+- (void)test22 {
+    
+    self.speedMonitor = [[DHNetworkSpeed alloc]init];
+    [self.speedMonitor startNetworkSpeedMonitor];
+    [self.speedMonitor checkDeviceInfo];
+    //监听下载速度
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkSpeedChanged:) name:NetworkDownloadSpeedNotificationKey object:nil];
+    //监听上传速度
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkUploadSpeedChanged:) name:NetworkUploadSpeedNotificationKey object:nil];
+}
+//分别获取上行和下行的实时网速
+- (void)networkUploadSpeedChanged:(NSNotification *)sender {
+    
+    NSString *uploadSpped = [sender.userInfo objectForKey:NetworkSpeedNotificationKey];
+    NSLog(@"上传速度：%@",uploadSpped);
+}
+- (void)networkSpeedChanged:(NSNotification *)sender {
+    
+    NSString *downloadSpped = [sender.userInfo objectForKey:NetworkSpeedNotificationKey];
+    NSLog(@"下载速度：%@",downloadSpped);
+}
+
+/// 各种绘制
+- (void)test23 {
+    BNMarketModulesView *iiii = [[BNMarketModulesView alloc]init];
+    iiii.frame = CGRectMake(self.view.frame.size.width * 0.1, 150,self.view.frame.size.width * 0.8,self.view.frame.size.width * 0.8);
+    iiii.layer.borderColor = [UIColor orangeColor].CGColor;
+    iiii.layer.borderWidth = 1.0;
+    [self.view addSubview:iiii];
+}
+//TODO:  阶乘
+long long dofactorial(int min, int max){
+    if(min > max){
+        return 0;
+    }
+    if(min == 0){
+        if(max == 0){
+            //0的阶乘是1
+            return 1;
+        }else{
+            min = 1;
+        }
+        
+    }
+    long long result = 1;
+    for (int i = min; i <= max; i++) {
+        result *= i;
+        
+        if(result > INT_MAX){
+            //考虑溢出
+            return -1;
+        }
+    }
+    return result;
+}
+//- (BOOL)pointInside:(CGPoint)point withEvent:(nullable UIEvent *)event {
+//    if (_woodpeckerIcon) {
+//        CGPoint p = [_woodpeckerIcon convertPoint:point fromView:_viewroot];
+//        if (CGRectContainsPoint(_woodpeckerIcon.bounds, p)) {
+//            return YES;
+//        }
+//    }
+//    return YES;
+//}
+// 动画
+- (void)testView {
+
+//    UIView *viewRed = [[UIView alloc]init];
+//    [self.view addSubview:viewRed];
+//    CGFloat x = 10;
+//    CGFloat h = 200;
+//    CGFloat y = ([UIScreen mainScreen].bounds.size.height - h)/2;
+//    CGFloat w = [UIScreen mainScreen].bounds.size.width - x*2;
+//    viewRed.frame = CGRectMake(x, y, w, h);
+//    viewRed.backgroundColor = UIColor.redColor;
+//
+//    UIView *viewYellwo = [[UIView alloc]init];
+//    [self.view addSubview:viewYellwo];
+//    viewYellwo.frame = CGRectMake(10, 100, 100, 100);
+//    viewYellwo.backgroundColor = UIColor.yellowColor;
+//
+//    UIView *viewBlack = [[UIView alloc]init];
+//    [self.view addSubview:viewBlack];
+//    viewBlack.backgroundColor = UIColor.blackColor;
+//    CGFloat ww = (100)*[UIScreen mainScreen].bounds.size.height/750;
+//    viewBlack.frame = CGRectMake(10, 100, ww, ww);
+    
+    
+    _viewroot = [[UIView alloc]init];
+    [self.view addSubview:_viewroot];
+    _viewroot.frame = CGRectMake(10, 100, 100, 100);
+    _viewroot.backgroundColor = UIColor.yellowColor;
+    _viewroot.userInteractionEnabled = YES;
+    
+    _contentView = [[UIView alloc] initWithFrame:CGRectMake(100, 0, 200, 200)];
+    _contentView.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.9];
+    _contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    _contentView.clipsToBounds = YES;
+    _contentView.layer.borderColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.3].CGColor;
+    _contentView.layer.borderWidth = 1 / [UIScreen mainScreen].scale;
+    _contentView.layer.cornerRadius = 2;
+    [self.view addSubview:_contentView];
+    
+    
+    UIImage *icon = [UIImage imageNamed:@"QQ"] ;//[UIImage imageNamed:@"QQ" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    if (icon) {
+        _woodpeckerIcon = [[UIImageView alloc] initWithImage:icon];
+        _woodpeckerIcon.layer.anchorPoint = CGPointMake(0.5, 0.9);//http://t.zoukankan.com/Free-Thinker-p-11269662.html哦
+        
+    } else {
+        _woodpeckerIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 38., 38.)];
+        _woodpeckerIcon.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.8];
+        _woodpeckerIcon.clipsToBounds = YES;
+        _woodpeckerIcon.layer.anchorPoint = CGPointMake(0.7, 0.7);
+        _woodpeckerIcon.layer.cornerRadius = 100 / 2.0;
+    }
+    _woodpeckerIcon.center = CGPointMake(12, 12);
+    _woodpeckerIcon.userInteractionEnabled = YES;
+    [_woodpeckerIcon addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleIconTap:)]];
+    [_viewroot addSubview:_woodpeckerIcon];
+    
+}
+- (void)handleIconTap:(id)sender {
+    if (_woodpeckerIcon.image) {
+        [UIView animateWithDuration:0.06 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            self->_woodpeckerIcon.transform = CGAffineTransformMakeRotation(M_PI_4 - 0.2);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.05 delay:0.05 usingSpringWithDamping:1.0 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                self->_woodpeckerIcon.transform = CGAffineTransformIdentity;
+            } completion:nil];
+        }];
+    }
+    
+    if (_contentView.width > 10) {
+        [self fold:YES];
+    } else {
+        [self unfold:YES];
+    }
+}
+- (void)fold:(BOOL)animated {
+    if (_contentView.width > 0) {
+        if (animated) {
+            [UIView animateWithDuration:0.2 animations:^{
+                self->_contentView.width = 0;
+                self->_contentView.height = 0;
+            } completion:^(BOOL finished) {
+                _viewroot.width = 1.;
+                _viewroot.height = 1.;
+            }];
+        } else {
+            _contentView.width = 0;
+            _contentView.height = 0;
+            _viewroot.width = 1.;
+            _viewroot.height = 1.;
+        }
+    }
+}
+- (void)unfold:(BOOL)animated {
+    if (_contentView.width <= 0) {
+        if (animated) {
+            [UIView animateWithDuration:0.2 animations:^{
+                [self setupSize];
+            }];
+        } else {
+            [self setupSize];
+        }
+    }
+}
+// Determine the size of the plugin collection view.
+- (void)setupSize {
+    NSInteger widthCount = 4;
+    NSInteger heightCount = 0;
+//    for (NSArray *pluginAry in _pluginModelArray) {
+//        heightCount += (pluginAry.count + 3) / 4;
+//    }
+//    self.ykw_width = widthCount * ([YKWPluginModelCell cellSizeForModel:nil].width + 10) + 10;
+//    self.ykw_height = heightCount * ([YKWPluginModelCell cellSizeForModel:nil].height + 10)  + _pluginModelArray.count * 20;
+    if (_contentView.height > [UIScreen mainScreen].bounds.size.height * 3. / 4.) {
+        _contentView.height = [UIScreen mainScreen].bounds.size.height * 3. / 4.;
+    }
+//    self.collectionView.frame = CGRectMake(0, 0, self.ykw_width, self.ykw_height);
+
+    // Restore to previous postion on first show.
+//    if (_firstLoad) {
+//        _firstLoad = NO;
+        NSString *centerStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"kYKWPluginsWindowLastCenter"];
+        if (centerStr.length) {
+            CGPoint center = CGPointFromString(centerStr);
+            // Position protection.
+            if (CGRectContainsPoint(UIEdgeInsetsInsetRect([UIApplication sharedApplication].keyWindow.bounds, UIEdgeInsetsMake(50, 50, 50, 50)), CGPointMake(center.x - _viewroot.width / 2., center.y - _viewroot.height / 2.))) {
+                _viewroot.center = center;
+            }
+//        }
+    }
+    [self checkFrameOrigin];
+}
+- (void)checkFrameOrigin {
+    if (!CGRectContainsPoint(UIEdgeInsetsInsetRect([UIScreen mainScreen].applicationFrame, UIEdgeInsetsMake(20, 20, 20, 20)), _viewroot.frame.origin)) {
+        _viewroot.left = 20;
+        _viewroot.top = 180;
+    }
+}
+
+// 内存判断
 - (void)foo {
     NSMutableArray *arr = [[NSMutableArray alloc]initWithCapacity:10];
     while (1) {
@@ -470,7 +840,6 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
             UIImageView *vv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"erweima"]];
             [arr addObject:vv];
         }
-        
         ViewController *vc= [[ViewController alloc]init];
         long aa = [ViewController footprintMemory];
         NSLog(@"%l",aa);
@@ -517,4 +886,29 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
     view.layer.position = position; // 通过在 position 上做逆向偏移，把位置给移回来。
 }
 
+/// 镂空
+- (CAGradientLayer *)searchViewAddGradientLayerWithSearchView:(UIView *)searchView andSearchBound:(CGRect)searchBound{
+    /*
+     1.CAGradientLayer的坐标系统是从坐标（0，0）到（1，1）绘制的矩形;
+     2.CAGradientLayer的frame值的size不为正方形的话，坐标系统会被拉伸;
+     3.CAGradientLayer的startPoint与endPoint会直接影响颜色的绘制方向;
+     4.CAGradientLayer的颜色分割点是以0到1的比例来计算的;
+     */
+    CAGradientLayer *gl = [CAGradientLayer layer];
+    gl.frame = searchBound;
+    gl.startPoint = CGPointMake(0,0);
+    gl.endPoint = CGPointMake(1,1);
+    gl.colors = @[(__bridge id)[UIColor colorWithRed:1.0 green:0.31 blue:0.39 alpha:1.0].CGColor, (__bridge id)[UIColor colorWithRed:0.97 green:0.17 blue:0.27 alpha:1.0].CGColor];
+    gl.locations = @[@(0), @(1.0f)];
+    gl.cornerRadius = 6;
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.lineWidth = 1.0;
+    UIBezierPath *path =  [UIBezierPath bezierPathWithRoundedRect:searchBound byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(6, 6)];
+    maskLayer.path = [path CGPath];
+    maskLayer.fillColor = [[UIColor clearColor] CGColor];
+    maskLayer.strokeColor = [[UIColor redColor] CGColor];
+    gl.mask = maskLayer;
+    [searchView.layer addSublayer:gl];
+    return gl;
+}
  @end

@@ -8,8 +8,10 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "YKWoodpecker.h"
 
-@interface SceneDelegate ()<CLLocationManagerDelegate>
+
+@interface SceneDelegate ()<CLLocationManagerDelegate,YKWCmdCoreCmdParseDelegate>
 @property (nonatomic, strong) CLLocationManager *manager;//定位服务管理类
 
 @end
@@ -29,6 +31,7 @@
         self.window.rootViewController = nav;
         [self.window makeKeyAndVisible];
     }
+    [self xxx];
 //    [self initLocationManager];
 }
 
@@ -69,7 +72,21 @@
     // to restore the scene back to its current state.
     NSLog(@"已经从前台进入后台");
 }
+- (void)xxx {
+    // Release 下可开启安全模式，只支持打开安全插件 * 可选
+//    #ifndef DEBUG
+       [YKWoodpeckerManager sharedInstance].safePluginMode = YES;
+//    #endif
 
+       // 设置 parseDelegate，可通过 YKWCmdCoreCmdParseDelegate 协议实现自定义命令 * 可选
+       [YKWoodpeckerManager sharedInstance].cmdCore.parseDelegate = self;
+       
+       // 显示啄幕鸟
+       [[YKWoodpeckerManager sharedInstance] show];
+       
+       // 启动时可直接打开某一插件 * 可选
+    //    [[YKWoodpeckerManager sharedInstance] openPluginNamed:@"xxx"];
+}
 - (void)initLocationManager {
     //1.创建定位管理对象
     _manager = [[CLLocationManager alloc]init];

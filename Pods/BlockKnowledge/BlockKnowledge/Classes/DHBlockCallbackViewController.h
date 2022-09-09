@@ -32,7 +32,7 @@ typedef void (^MyReturnTextBlock)(NSString *showText);
 
 + (void)loadDetailCallBack:(NSString *)name callBack:(void(^)(NSString* str))FinishCallBack;
 //实例方法 必须使用实例对象调用，可以在实例方法里面使用属性，实例方法也必须调用实例方法。存储在类结构体里面的methodLists里面
-- (NSString *)textFunction:(NSString *)str;
+- (NSString *)textFunction:(NSString *)str __attribute__((warn_unused_result));;
 
 - (void)textValueFunction:(void(^)(NSString * infor))inforBlock;
 

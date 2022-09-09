@@ -72,10 +72,8 @@ ${BUILT_PRODUCTS_DIR}/VTAntiScreenCapture/VTAntiScreenCapture.framework
 ${BUILT_PRODUCTS_DIR}/WHDebugTool/WHDebugTool.framework
 ${BUILT_PRODUCTS_DIR}/WXSTransition/WXSTransition.framework
 ${BUILT_PRODUCTS_DIR}/XHRealTimeBlur/XHRealTimeBlur.framework
-${BUILT_PRODUCTS_DIR}/YBImageBrowser/YBImageBrowser.framework
-${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework
-${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework
-${BUILT_PRODUCTS_DIR}/YYText/YYText.framework
+${BUILT_PRODUCTS_DIR}/YKWoodpecker/YKWoodpecker.framework
+${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework
 ${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework
 ${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework
 ${BUILT_PRODUCTS_DIR}/ZYGCDTimer/ZYGCDTimer.framework

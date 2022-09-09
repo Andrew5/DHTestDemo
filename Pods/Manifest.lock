@@ -79,7 +79,6 @@ PODS:
   - GCDWebServer/Core (3.5.4)
   - GlobalButton (1.0.3):
     - GlobalButton/only (= 1.0.3)
-  - GlobalButton/complex (1.0.3)
   - GlobalButton/only (1.0.3)
   - GlobalButtonSwift (0.1.1)
   - HandyJSON (5.0.2)
@@ -117,7 +116,8 @@ PODS:
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - MultithreadingKnowledge (0.1.0)
-  - MVPGrowthModel (0.1.0)
+  - MVPGrowthModel (0.1.0):
+    - CategoryRelyon
   - MVVMTableViewDemo (0.1.0):
     - Masonry
   - MyHelloWord (0.1.0):
@@ -258,25 +258,18 @@ PODS:
   - WHDebugTool (2.5)
   - WXSTransition (1.2.1)
   - XHRealTimeBlur (1.7)
-  - YBImageBrowser (3.0.9):
-    - YBImageBrowser/Core (= 3.0.9)
-  - YBImageBrowser/Core (3.0.9):
-    - SDWebImage (>= 5.0.0)
-    - YYImage
+  - YKWoodpecker (1.2.9)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
-  - YYCategories (1.0.4):
-    - YYCategories/no-arc (= 1.0.4)
-  - YYCategories/no-arc (1.0.4)
-  - YYImage (1.0.4):
-    - YYImage/Core (= 1.0.4)
-  - YYImage/Core (1.0.4)
-  - YYText (1.0.7)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
   - ZYGCDTimer (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - Alamofire
   - BeeHive (= 1.1.1)
   - BlockKnowledge (from `../BlockKnowledge`)
   - BlocksKit
@@ -295,7 +288,7 @@ DEPENDENCIES:
   - FloatingButton (from `https://github.com/DanboDuan/FloatingButton.git`, branch `master`)
   - FMDB (from `https://github.com/ccgus/fmdb.git`)
   - GCDWebServer
-  - GlobalButton/complex (from `../GlobalButton`)
+  - GlobalButton
   - GlobalButtonSwift
   - HandyJSON
   - Hero
@@ -338,7 +331,6 @@ DEPENDENCIES:
   - SnapKit (= 5.0.1)
   - Spring
   - SVProgressHUD
-  - SwiftyJSON
   - SwiftyJSON (= 5.0.0)
   - SwipeView
   - SXWaveAnimate
@@ -349,10 +341,9 @@ DEPENDENCIES:
   - VTAntiScreenCapture (from `../VTAntiScreenCapture`)
   - WHDebugTool
   - WXSTransition
-  - YBImageBrowser (~> 3.0.9)
+  - YKWoodpecker
   - YogaKit
-  - YYCategories
-  - YYText
+  - YYKit
   - ZYGCDTimer
 
 SPEC REPOS:
@@ -368,6 +359,7 @@ SPEC REPOS:
     - FDFullscreenPopGesture
     - fishhook
     - GCDWebServer
+    - GlobalButton
     - GlobalButtonSwift
     - HandyJSON
     - Hero
@@ -410,12 +402,10 @@ SPEC REPOS:
     - WHDebugTool
     - WXSTransition
     - XHRealTimeBlur
-    - YBImageBrowser
+    - YKWoodpecker
     - Yoga
     - YogaKit
-    - YYCategories
-    - YYImage
-    - YYText
+    - YYKit
     - ZYGCDTimer
 
 EXTERNAL SOURCES:
@@ -440,8 +430,6 @@ EXTERNAL SOURCES:
     :git: https://github.com/DanboDuan/FloatingButton.git
   FMDB:
     :git: https://github.com/ccgus/fmdb.git
-  GlobalButton:
-    :path: "../GlobalButton"
   IMChatKeyboards:
     :path: "../IMChatKeyboards"
   LearnRAC:
@@ -502,7 +490,7 @@ SPEC CHECKSUMS:
   FloatingButton: 75cc80f37919517dc44e67aca73ce72ffa44314e
   FMDB: e4da33263daba970e09089ff242a03e0255426c3
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
-  GlobalButton: 304c650922b2713c628046ea1f87191612e4c29c
+  GlobalButton: 14ac6284654dad39f2b96e60aed129ed500d0045
   GlobalButtonSwift: 1a4adef0cfa901555a7614b9e22f725282c61dd5
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
@@ -523,7 +511,7 @@ SPEC CHECKSUMS:
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   MultithreadingKnowledge: c9da89038f047e54e2d731849809e6ce3177eace
-  MVPGrowthModel: 3c6eb96c85b4e80540dc60c9ee6732db271ebd9c
+  MVPGrowthModel: 31c5f7e1ef3706320ffc19c9ca915febbb65c4a3
   MVVMTableViewDemo: 1cc3d03cd07c64bf4a2399d371167fde61b3474c
   MyHelloWord: a9aa19b6b7703a5139f6afa1228bee4315ed6cc3
   MyPodTestPro: aa58102909a99f966a4530dd11b135f678301488
@@ -558,14 +546,12 @@ SPEC CHECKSUMS:
   WHDebugTool: 8ff09b8c6e1e4ae4f0268740eab8d72bb4c23bc2
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
   XHRealTimeBlur: 661fadd5691ba2d349758e8fd5fbdb499ac55f8c
-  YBImageBrowser: 7ecc8bf33ffa5f3b94c397c29b4f3638dd37f527
+  YKWoodpecker: 5433b65498b2afe2a4adc20642f76ff57e161f2a
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
-  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
-  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
-  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYGCDTimer: 12629306940bd8edc456568478213a9f21abfe2d
 
-PODFILE CHECKSUM: ccdfe6a0989b5d1be96601122c62332f79d1e70a
+PODFILE CHECKSUM: a9664d3d973bbbefdccfc8d0662dcd8dbff6167f
 
 COCOAPODS: 1.11.3

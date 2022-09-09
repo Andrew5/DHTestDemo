@@ -10,7 +10,10 @@
 #endif
 #endif
 
+#import "DHAlertView.h"
 #import "DHProgressHUD.h"
+#import "SDDrowNoticeView.h"
+#import "DHActionLinkLabel.h"
 
 FOUNDATION_EXPORT double DHUIKitModuleVersionNumber;
 FOUNDATION_EXPORT const unsigned char DHUIKitModuleVersionString[];

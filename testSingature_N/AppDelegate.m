@@ -26,6 +26,33 @@
             //report
         }
     }];
+    /// 创建observer
+    CFRunLoopObserverRef ob = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault(), kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        NSLog(@"----监听到RunLoop状态发生改变---%zd-%@",activity,observer);
+        /*
+         上面的 Source/Timer/Observer 被统称为 mode item，一个item可以被同时加入多个mode。但一个item被重复加入同一个mode时是不会有效果的。如果一个mode中一个item 都没有（只有Observer也不行），则 RunLoop 会直接退出，不进入循环。
+         */
+        if (activity == kCFRunLoopEntry) {
+            NSLog(@"即将处理runloop");
+        }
+        else if (activity == kCFRunLoopBeforeTimers) {
+            NSLog(@"即将处理timer");
+        }
+        else if (activity == kCFRunLoopBeforeSources) {
+            NSLog(@"即将处理Sources");
+        }
+        else if (activity == kCFRunLoopBeforeWaiting) {
+            NSLog(@"即将进入休眠");
+        }
+        else if (activity == kCFRunLoopAfterWaiting) {
+            NSLog(@"从休眠中唤醒loop");
+        }
+        else if (activity == kCFRunLoopExit) {
+            NSLog(@"即将退出");
+        }
+    });
+    // 添加观察者：监听RunLoop的状态
+    CFRunLoopAddObserver(CFRunLoopGetCurrent(), ob, kCFRunLoopDefaultMode);
     return YES;
 }
 
