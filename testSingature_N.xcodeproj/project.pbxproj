@@ -95,6 +95,10 @@
 		38E140F728B8E6E8007A71FF /* QDExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E140F228B8E6E8007A71FF /* QDExceptionHandler.m */; };
 		38E140F828B8E6E8007A71FF /* CHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E140F328B8E6E8007A71FF /* CHLogger.m */; };
 		38E140F928B8E6E8007A71FF /* QDExceptionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E140F528B8E6E8007A71FF /* QDExceptionTool.m */; };
+		38FC53E528D36D64002FFCB1 /* TestAControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FC53DC28D36D64002FFCB1 /* TestAControl.m */; };
+		38FC53E628D36D64002FFCB1 /* TestBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FC53E028D36D64002FFCB1 /* TestBViewController.m */; };
+		38FC53E728D36D64002FFCB1 /* TestAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FC53E128D36D64002FFCB1 /* TestAViewController.m */; };
+		38FC53E828D36D64002FFCB1 /* GeneralInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FC53E328D36D64002FFCB1 /* GeneralInterest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +271,14 @@
 		38E140F328B8E6E8007A71FF /* CHLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLogger.m; sourceTree = "<group>"; };
 		38E140F428B8E6E8007A71FF /* QDExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDExceptionHandler.h; sourceTree = "<group>"; };
 		38E140F528B8E6E8007A71FF /* QDExceptionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDExceptionTool.m; sourceTree = "<group>"; };
+		38FC53DC28D36D64002FFCB1 /* TestAControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAControl.m; sourceTree = "<group>"; };
+		38FC53DD28D36D64002FFCB1 /* TestAControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAControl.h; sourceTree = "<group>"; };
+		38FC53DF28D36D64002FFCB1 /* TestAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAViewController.h; sourceTree = "<group>"; };
+		38FC53E028D36D64002FFCB1 /* TestBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBViewController.m; sourceTree = "<group>"; };
+		38FC53E128D36D64002FFCB1 /* TestAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAViewController.m; sourceTree = "<group>"; };
+		38FC53E228D36D64002FFCB1 /* TestBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBViewController.h; sourceTree = "<group>"; };
+		38FC53E328D36D64002FFCB1 /* GeneralInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralInterest.m; sourceTree = "<group>"; };
+		38FC53E428D36D64002FFCB1 /* GeneralInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralInterest.h; sourceTree = "<group>"; };
 		468DB65966A8E484DB1CA058 /* Pods-testSingature_N.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSingature_N.debug.xcconfig"; path = "Target Support Files/Pods-testSingature_N/Pods-testSingature_N.debug.xcconfig"; sourceTree = "<group>"; };
 		E081B817C2EC725DE4A1C046 /* Pods_testSingature_N.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testSingature_N.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -493,6 +505,7 @@
 		38BE70CF28B0DF4D00EAF7DF /* testSingature_N */ = {
 			isa = PBXGroup;
 			children = (
+				38FC53DA28D36D1C002FFCB1 /* PublicSingle */,
 				38C6F94E28BDFD8A00AC8B3A /* Swift */,
 				38E140ED28B8E6D0007A71FF /* ThreeLib */,
 				38E140E328B78820007A71FF /* Resources */,
@@ -703,6 +716,37 @@
 				38C6F94C28BDC53300AC8B3A /* DHOutOfMemoryManager.m */,
 			);
 			path = UncaughtException;
+			sourceTree = "<group>";
+		};
+		38FC53DA28D36D1C002FFCB1 /* PublicSingle */ = {
+			isa = PBXGroup;
+			children = (
+				38FC53DE28D36D64002FFCB1 /* C */,
+				38FC53E428D36D64002FFCB1 /* GeneralInterest.h */,
+				38FC53E328D36D64002FFCB1 /* GeneralInterest.m */,
+				38FC53DB28D36D64002FFCB1 /* M */,
+			);
+			path = PublicSingle;
+			sourceTree = "<group>";
+		};
+		38FC53DB28D36D64002FFCB1 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				38FC53DC28D36D64002FFCB1 /* TestAControl.m */,
+				38FC53DD28D36D64002FFCB1 /* TestAControl.h */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		38FC53DE28D36D64002FFCB1 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				38FC53DF28D36D64002FFCB1 /* TestAViewController.h */,
+				38FC53E028D36D64002FFCB1 /* TestBViewController.m */,
+				38FC53E128D36D64002FFCB1 /* TestAViewController.m */,
+				38FC53E228D36D64002FFCB1 /* TestBViewController.h */,
+			);
+			path = C;
 			sourceTree = "<group>";
 		};
 		67C6174A941F768FA9E0B3F6 /* Frameworks */ = {
@@ -933,6 +977,8 @@
 				38C6F98928BE202800AC8B3A /* DHBridgeViewController.m in Sources */,
 				3877945928C59F1C00790637 /* LYAlertView.swift in Sources */,
 				38BE70E328B0DF5300EAF7DF /* main.m in Sources */,
+				38FC53E528D36D64002FFCB1 /* TestAControl.m in Sources */,
+				38FC53E728D36D64002FFCB1 /* TestAViewController.m in Sources */,
 				38BE70D528B0DF4D00EAF7DF /* SceneDelegate.m in Sources */,
 				3877945428C59F1C00790637 /* LYAlertFactoryProtocol.swift in Sources */,
 				387D794828CB8A500072C841 /* GMSignature.m in Sources */,
@@ -945,6 +991,7 @@
 				3877945628C59F1C00790637 /* LYLineView.swift in Sources */,
 				387D79B028CB9DA30072C841 /* HDCollectionMonthDetailHeaderView.m in Sources */,
 				38DBF26A28C9F0EE00447874 /* CustomerProtocol.swift in Sources */,
+				38FC53E628D36D64002FFCB1 /* TestBViewController.m in Sources */,
 				387D795628CB8D290072C841 /* AdapterObject.m in Sources */,
 				38C6F98428BE048300AC8B3A /* hook.c in Sources */,
 				387D79B128CB9DA30072C841 /* DHMonthListTableViewCell.m in Sources */,
@@ -968,6 +1015,7 @@
 				387D79B828CB9DA30072C841 /* ACEExpandableTextCell.m in Sources */,
 				387D795528CB8D290072C841 /* AdapteeObject.m in Sources */,
 				3877945F28C59F1C00790637 /* LYAlertBuilder.swift in Sources */,
+				38FC53E828D36D64002FFCB1 /* GeneralInterest.m in Sources */,
 				38BE70FF28B248FC00EAF7DF /* LGPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

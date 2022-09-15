@@ -29,6 +29,8 @@
 #import <DHUIKitModule/DHUIKitModule-umbrella.h>
 #import "DHNetworkSpeed.h"
 #import "BNMarketModulesView.h"
+#import "TestAControl.h"
+#import "GeneralInterest.h"
 
 #include <netdb.h>
 #include <net/if.h>
@@ -658,6 +660,13 @@ static inline CGRect UIRectAdapter(CGFloat x,CGFloat y,CGFloat width,CGFloat hei
     iiii.layer.borderColor = [UIColor orangeColor].CGColor;
     iiii.layer.borderWidth = 1.0;
     [self.view addSubview:iiii];
+}
+- (void)test24 {
+    TestAControl *ac = kGICOC(NSStringFromClass([TestAControl class]));
+    NSLog(@"AC:%@",ac);
+    ac.value = @"测试数据";
+    NSString *value = ((TestAControl *)kGICOC(@"TestAControl")).value;
+    NSLog(@"value:%@",value);
 }
 //TODO:  阶乘
 long long dofactorial(int min, int max){
