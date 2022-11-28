@@ -8,6 +8,8 @@
 #import "AppDelegate.h"
 #import "QDExceptionHandler.h"
 #import "DHOutOfMemoryManager.h"
+#import "GlobalButton/DHGlobalConfig.h"
+#import "GlobalButtonSwift-umbrella.h"
 @interface AppDelegate ()
 
 @end
@@ -17,15 +19,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
     //获取异常
     NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
     InstallSignalHandler();//信号量截断
     InstallUncaughtExceptionHandler();
     [[DHOutOfMemoryManager sharedInstance] beginMonitoringMemoryEventsWithHandler:^(BOOL wasInForeground) {
         if (wasInForeground) {
-            //report
+            NSLog(@"----report----");
         }
     }];
+    
+    // 全剧按钮
+    [DHGlobalConfig setEnvironmentMap:@{
+        @"UAT":@"www.UAT.com",
+        @"PRO":@"www.PRO.com",
+        @"SIT":@"www.SIT.com",
+    } currentEnv:DHGlobalConfig.envstring];
+//    [DHGlobeManager share];
     /// 创建observer
     CFRunLoopObserverRef ob = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault(), kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
         NSLog(@"----监听到RunLoop状态发生改变---%zd-%@",activity,observer);

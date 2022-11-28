@@ -13,7 +13,10 @@
 #import "CSPTimerMananger.h"
 #import "DHBlockCallbackViewController.h"
 #import "DHBlockKnowledgePracticeViewController.h"
+#import "DHBlockView.h"
+#import "DHPerson.h"
 #import "DHProxy.h"
+#import "DHResultBlockView.h"
 
 FOUNDATION_EXPORT double BlockKnowledgeVersionNumber;
 FOUNDATION_EXPORT const unsigned char BlockKnowledgeVersionString[];

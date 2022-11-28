@@ -32,10 +32,14 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - CategoryRelyon (0.1.0):
+  - CategoryRelyon/OnlyCategory (0.1.0):
     - Masonry
     - SDWebImage
     - SDWebImageWebPCoder
+  - CLImageEditor (0.2.4):
+    - CLImageEditor/Core (= 0.2.4)
+  - CLImageEditor/Core (0.2.4)
+  - CocoaPicker (1.1)
   - ComponentKit (0.31):
     - RenderCore (= 0.31)
     - Yoga (~> 1.14)
@@ -46,8 +50,9 @@ PODS:
     - Debugo/Core (= 0.4.0)
   - Debugo/Core (0.4.0):
     - FMDB (>= 2.7.2)
+  - DerivedRequest (0.1.3):
+    - AFNetworking
   - DHBasicKnowledge (0.1.0):
-    - CategoryRelyon
     - Masonry
     - YogaKit
   - DHTabBar (0.1.0):
@@ -55,6 +60,7 @@ PODS:
   - DHUIKitModule (0.1.0):
     - lottie-ios (~> 2.5.3)
   - DynamicBlurView (4.1.0)
+  - DynamicLaunchImage (0.1.0)
   - ECPrivacyCheckTools (2.0.0)
   - FDFullscreenPopGesture (1.1)
   - fishhook (0.2)
@@ -74,17 +80,24 @@ PODS:
   - FMDB (2.7.8):
     - FMDB/standard (= 2.7.8)
   - FMDB/standard (2.7.8)
+  - Fuzzywuzzy_swift (0.0.2)
   - GCDWebServer (3.5.4):
     - GCDWebServer/Core (= 3.5.4)
   - GCDWebServer/Core (3.5.4)
-  - GlobalButton (1.0.3):
-    - GlobalButton/only (= 1.0.3)
-  - GlobalButton/only (1.0.3)
+  - GKNavigationBar (1.8.1):
+    - GKNavigationBar/GestureHandle (= 1.8.1)
+    - GKNavigationBar/NavigationBar (= 1.8.1)
+  - GKNavigationBar/GestureHandle (1.8.1)
+  - GKNavigationBar/NavigationBar (1.8.1)
+  - GlobalButton (1.0.4):
+    - GlobalButton/only (= 1.0.4)
+  - GlobalButton/complex (1.0.4)
+  - GlobalButton/only (1.0.4)
   - GlobalButtonSwift (0.1.1)
   - HandyJSON (5.0.2)
-  - Hero (1.6.1)
+  - Hero (1.6.2)
   - HHTimeProfiler (1.2.3)
-  - HHTransition (3.0.2)
+  - HHTransition (3.1.0)
   - IBAnimatable (6.1.0)
   - IGListKit (2.1.0):
     - IGListKit/Default (= 2.1.0)
@@ -116,8 +129,7 @@ PODS:
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - MultithreadingKnowledge (0.1.0)
-  - MVPGrowthModel (0.1.0):
-    - CategoryRelyon
+  - MVPGrowthModel (0.1.0)
   - MVVMTableViewDemo (0.1.0):
     - Masonry
   - MyHelloWord (0.1.0):
@@ -163,6 +175,9 @@ PODS:
     - PermissionKit/Core
   - PermissionKit/Tracking (1.4.0):
     - PermissionKit/Core
+  - PGDatePicker (2.6.9):
+    - PGPickerView
+  - PGPickerView (1.3.8)
   - pop (1.0.12)
   - PopMenu (2.4):
     - pop
@@ -179,10 +194,12 @@ PODS:
   - RxSwift (6.2.0)
   - SAMKeychain (1.5.3)
   - SDAutoLayout (2.2.1)
-  - SDWebImage (5.13.2):
-    - SDWebImage/Core (= 5.13.2)
-  - SDWebImage/Core (5.13.2)
-  - SDWebImageWebPCoder (0.9.0):
+  - SDCycleScrollView (1.82):
+    - SDWebImage (>= 5.0.0)
+  - SDWebImage (5.13.4):
+    - SDWebImage/Core (= 5.13.4)
+  - SDWebImage/Core (5.13.4)
+  - SDWebImageWebPCoder (0.9.1):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.13)
   - SnapKit (5.0.1)
@@ -273,22 +290,28 @@ DEPENDENCIES:
   - BeeHive (= 1.1.1)
   - BlockKnowledge (from `../BlockKnowledge`)
   - BlocksKit
-  - CategoryRelyon (from `../CategoryRelyon`)
+  - CategoryRelyon/OnlyCategory (from `../CategoryRelyon`)
+  - CLImageEditor
+  - CocoaPicker
   - ComponentKit (~> 0.31)
   - CTMediator
   - CustomerScroller (from `../CustomerScroller`)
   - Debugo
+  - DerivedRequest (from `../DerivedRequest`)
   - DHBasicKnowledge (from `../DHBasicKnowledge`)
   - DHTabBar (from `../DHTabBar`)
   - DHUIKitModule (from `../DHUIKitModule`)
+  - DynamicLaunchImage (from `../DynamicLaunchImage`)
   - ECPrivacyCheckTools (from `../ECPrivacyCheckTools`)
   - FDFullscreenPopGesture (~> 1.1)
   - fishhook (= 0.2)
   - FliqloClick (from `../FliqloClick`)
   - FloatingButton (from `https://github.com/DanboDuan/FloatingButton.git`, branch `master`)
   - FMDB (from `https://github.com/ccgus/fmdb.git`)
+  - Fuzzywuzzy_swift (from `https://github.com/lxian/Fuzzywuzzy_swift.git`)
   - GCDWebServer
-  - GlobalButton
+  - GKNavigationBar (from `../GKNavigationBar`)
+  - GlobalButton/complex (from `../GlobalButton`)
   - GlobalButtonSwift
   - HandyJSON
   - Hero
@@ -315,6 +338,7 @@ DEPENDENCIES:
   - ObjectMapper (~> 3.5.2)
   - OpenUDID
   - PermissionKit (from `../PermissionKit`)
+  - PGDatePicker (from `https://github.com/xiaozhuxiong121/PGDatePicker.git`)
   - pop
   - PopMenu
   - PopupDialog
@@ -326,6 +350,7 @@ DEPENDENCIES:
   - RxSwift (= 6.2.0)
   - SAMKeychain (= 1.5.3)
   - SDAutoLayout (~> 2.2.1)
+  - SDCycleScrollView
   - SDWebImage
   - SDWebImageWebPCoder
   - SnapKit (= 5.0.1)
@@ -352,6 +377,8 @@ SPEC REPOS:
     - Alamofire
     - BeeHive
     - BlocksKit
+    - CLImageEditor
+    - CocoaPicker
     - ComponentKit
     - CTMediator
     - Debugo
@@ -359,7 +386,6 @@ SPEC REPOS:
     - FDFullscreenPopGesture
     - fishhook
     - GCDWebServer
-    - GlobalButton
     - GlobalButtonSwift
     - HandyJSON
     - Hero
@@ -378,6 +404,7 @@ SPEC REPOS:
     - Moya
     - ObjectMapper
     - OpenUDID
+    - PGPickerView
     - pop
     - PopMenu
     - PopupDialog
@@ -388,6 +415,7 @@ SPEC REPOS:
     - RxSwift
     - SAMKeychain
     - SDAutoLayout
+    - SDCycleScrollView
     - SDWebImage
     - SDWebImageWebPCoder
     - SnapKit
@@ -415,12 +443,16 @@ EXTERNAL SOURCES:
     :path: "../CategoryRelyon"
   CustomerScroller:
     :path: "../CustomerScroller"
+  DerivedRequest:
+    :path: "../DerivedRequest"
   DHBasicKnowledge:
     :path: "../DHBasicKnowledge"
   DHTabBar:
     :path: "../DHTabBar"
   DHUIKitModule:
     :path: "../DHUIKitModule"
+  DynamicLaunchImage:
+    :path: "../DynamicLaunchImage"
   ECPrivacyCheckTools:
     :path: "../ECPrivacyCheckTools"
   FliqloClick:
@@ -430,6 +462,12 @@ EXTERNAL SOURCES:
     :git: https://github.com/DanboDuan/FloatingButton.git
   FMDB:
     :git: https://github.com/ccgus/fmdb.git
+  Fuzzywuzzy_swift:
+    :git: https://github.com/lxian/Fuzzywuzzy_swift.git
+  GKNavigationBar:
+    :path: "../GKNavigationBar"
+  GlobalButton:
+    :path: "../GlobalButton"
   IMChatKeyboards:
     :path: "../IMChatKeyboards"
   LearnRAC:
@@ -448,6 +486,8 @@ EXTERNAL SOURCES:
     :path: "../MyPodTestPro"
   PermissionKit:
     :path: "../PermissionKit"
+  PGDatePicker:
+    :git: https://github.com/xiaozhuxiong121/PGDatePicker.git
   QRCode:
     :path: "../QRCode"
   RHScan:
@@ -462,40 +502,52 @@ CHECKOUT OPTIONS:
     :commit: 563ae6d658b82cf5ec1787f8e063e4c6b14d6f9b
     :git: https://github.com/DanboDuan/FloatingButton.git
   FMDB:
-    :commit: d31d362cd5cf8a121c3823ebfb65d961f0eea658
+    :commit: 977dd81701047a19ab14646953e588f9075d61ac
     :git: https://github.com/ccgus/fmdb.git
+  Fuzzywuzzy_swift:
+    :commit: cb371fb2a0d4b0ffb1d0c16f17933405195f122d
+    :git: https://github.com/lxian/Fuzzywuzzy_swift.git
   MGJRouter:
     :commit: 565841ec6b70889262ed232704978fcf7deb9e44
     :git: https://github.com/lyujunwei/MGJRouter.git
+  PGDatePicker:
+    :commit: 8e3f64c14694f7ced802edfaeadc94bbef66fa27
+    :git: https://github.com/xiaozhuxiong121/PGDatePicker.git
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   BeeHive: 81b697e94e1ae0993eccf5388e195f3fbfe707a6
-  BlockKnowledge: f6fd6af03a9274da678fe17eba967c5d5d5e964a
+  BlockKnowledge: bcacc05ec888930bf641c2d9807ba90da66fed2a
   BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
-  CategoryRelyon: 72defa8b4537c52188d4f0cf088e8c82c25cb20c
+  CategoryRelyon: 7dbf6e02543e7bf4f7000f12029fae5a98866f75
+  CLImageEditor: dc3e5358f641368da3a76fc1c744a4c2ceb270ad
+  CocoaPicker: 0d898140a152c01585322586b97868496c4f097b
   ComponentKit: 7bf7048b9814afc6b6641645a14177f95fd9b9ae
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   CustomerScroller: b4b19d5782eb4d069f0465fd4d14720673b3a94b
   Debugo: 7ea74eca356172e17622b6de46a8f2f9e97724ae
-  DHBasicKnowledge: 64fc24f9ad8179a5bb780a7a6f54c7180f1d000d
+  DerivedRequest: 7fc848c7938d237169a332ad95c1705a629660e2
+  DHBasicKnowledge: 305ad7326297fea793e9383f1f6fa2efc5c91733
   DHTabBar: f48c00dc57e0097607609ab267c65563fb09caf0
-  DHUIKitModule: 7d587e263a6a925aadda28d8bea740190948c175
+  DHUIKitModule: 8dc2f494421d5c3dffb012bb0ad542071110bf32
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  DynamicLaunchImage: 49699b1d6d65f16439e668aff1d0cb3db2d4b493
   ECPrivacyCheckTools: f902b755ecc566e23256a4a10f41d198367b8b45
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   FliqloClick: 466c9f2336d535d1c2bfeef33cf66b74d49df387
   FloatingButton: 75cc80f37919517dc44e67aca73ce72ffa44314e
   FMDB: e4da33263daba970e09089ff242a03e0255426c3
+  Fuzzywuzzy_swift: a2f9a77bb6d3f1d99dc6364eda541254124e393d
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
-  GlobalButton: 14ac6284654dad39f2b96e60aed129ed500d0045
+  GKNavigationBar: f02ff7143e184fff7aa2c45ef3eee44fb4515a3b
+  GlobalButton: ba97050b8036711b4ca134f073081396c3333d57
   GlobalButtonSwift: 1a4adef0cfa901555a7614b9e22f725282c61dd5
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
-  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
+  Hero: c69009dbc9e2f0472e081adc644dba05fcedae72
   HHTimeProfiler: 2ec63cb266d1358f52f5a46cac33a6db0940a19b
-  HHTransition: ca5035c126a6a2dc1eb9a90d084013784bf4bf0a
+  HHTransition: 7a3e1348fd111641138626c5529455e492d7e19f
   IBAnimatable: 99dddd4c0625884a301ba3ecbc1615f8a390368e
   IGListKit: b826c68ef7a4ae1626c09d4d3e1ea7a169e6c36e
   IMChatKeyboards: 8dd22bcee124ddcb7669c99f80e48c2ec7b154cc
@@ -511,13 +563,15 @@ SPEC CHECKSUMS:
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   MultithreadingKnowledge: c9da89038f047e54e2d731849809e6ce3177eace
-  MVPGrowthModel: 31c5f7e1ef3706320ffc19c9ca915febbb65c4a3
+  MVPGrowthModel: 3c6eb96c85b4e80540dc60c9ee6732db271ebd9c
   MVVMTableViewDemo: 1cc3d03cd07c64bf4a2399d371167fde61b3474c
   MyHelloWord: a9aa19b6b7703a5139f6afa1228bee4315ed6cc3
   MyPodTestPro: aa58102909a99f966a4530dd11b135f678301488
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PermissionKit: 97d95d37e2e3893b12390300f54086a36c01cd55
+  PGDatePicker: 88960f3760edac96219c10320f25536ad31d0f44
+  PGPickerView: 037acfb132a4c8054fb43aaa59a5ff50c7f747f5
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PopMenu: 26b97baeaf250070f4f61b93727ca86d127d7bc5
   PopupDialog: 720c92befd8bc23c13442254945213db5612f149
@@ -530,8 +584,9 @@ SPEC CHECKSUMS:
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
-  SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
-  SDWebImageWebPCoder: 3dc350894112feab5375cfba9ce0986544a66a69
+  SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
+  SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
+  SDWebImageWebPCoder: 18503de6621dd2c420d680e33d46bf8e1d5169b0
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
@@ -552,6 +607,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYGCDTimer: 12629306940bd8edc456568478213a9f21abfe2d
 
-PODFILE CHECKSUM: a9664d3d973bbbefdccfc8d0662dcd8dbff6167f
+PODFILE CHECKSUM: ad61ed25ddfe1a40339e4cac96d47346480357fb
 
 COCOAPODS: 1.11.3

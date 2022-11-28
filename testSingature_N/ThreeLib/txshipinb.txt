@@ -1,0 +1,42 @@
+﻿https://github.com/lishuanglong521/douyinVideoAndLike/archive/refs/heads/master.zip
+
+https://github.com/yangguanghei/imitateDouyin
+
+https://github.com/Shannon-s-Dreamland/VideoPlayer
+
+https://github1s.com/dk250/MBVideoPlayer
+
+https://lanhuapp.com/web/#/item/project/detailDetach?tid=6e058332-e8da-45ba-875d-52ba79c783d4&pid=b40f2be5-1d03-40f6-a001-daf5e8c5a5cb&project_id=b40f2be5-1d03-40f6-a001-daf5e8c5a5cb&image_id=a1cb4af5-1e51-499a-96d6-b6845b67bff0&fromEditor=true&type=image
+
+https://www.jianshu.com/p/3f6775c02257 (iOS Crash/崩溃/异常 捕获)
+
+https://www.jianshu.com/p/989b336c64d3
+
+https://github.com/ChinaKeep/SwiftSummary
+
+https://www.jianshu.com/p/ba347d57d6af
+
+https://zhuanlan.zhihu.com/p/360107204
+
+使用block过程中经常会遇到使用[weak self] 或者 [unowned self]来防止block的循环引用
+它会先弱引用 self，然后确认我们能够暂时强引用 self，在闭包运行结束之后就释放对 self 的引用，这样就能解决大部分闭包导致的引用循环了！
+[weak self] in guard let self = self else { return } 
+xx.xxBlock = {[weak self] in
+            guard let `self` = self else { return }
+            ///code....
+        }
+xx.xxBlock = {[weak self] in
+            guard let strongSelf = self { else return }
+            ///code....
+        }
+xx.xxBlock = {[weak self] in
+            guard let self = self else { return }
+            ///code....
+        }
+http://120.27.138.34:8181/login yangshuai yangshuai
+
+http://39.98.201.34:8899/users/sign_in yangshuai ys888888
+
+http://101.201.254.199:7777/redmine/login yangshuai 123456
+
+https://lhcdn.lanhuapp.com/web/static/dsm-optimization.mp4

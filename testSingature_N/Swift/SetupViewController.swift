@@ -41,6 +41,7 @@ import CoreLocation
     
     var lock = NSLock()
     
+    var colorWell = UIColorWell()
     
     lazy var tableView: UITableView = {
         
@@ -56,7 +57,9 @@ import CoreLocation
         tableView.register(SetupJurisdictionTableViewCell.self, forCellReuseIdentifier: "SetupJurisdictionTableViewCell")
         return tableView
     }()
-    
+//    func passValue(_ value: [AnyHashable : Any]) {
+//
+//    }
     override func viewDidLoad() {
         //tableview
         super.viewDidLoad()
@@ -76,22 +79,63 @@ import CoreLocation
         //requestAlwaysAuthorization;                             //始终授权
         locationManager.startUpdatingLocation()
         print("开始定位 。。。")
-//        setupUI()
-        xxxView()
+        setupUI()
+//        xxxView()
         var str = {
             (arg1:String,arg2:String)->String in
             return arg1+"_"+arg2;
         }("侯","逸诚")
-        
+        test()
         print("OC的block吗？ \(str) 哈哈哈")
     }
+    func actionScope() -> () -> Int {
+        let outputNum = 5;
+        var num: Int = 15;
+        var name :String = "external modification value"
+        let block :() -> Int = {
+            num += 100;
+            name = "internal modification String value"
+            print("outputNum = \(outputNum)")
+            return num
+        }
+        num = 150
+        return block
+    }
+    func xxxx() {
+//        1. 定义固定格式的字典
+       // dict1的所有“键值”类型一致(都是字符串)
+//       var dict1 = ["name": "mary", "age": "18"]
 
+//       或者
+        var dataSource = [[String:String]()]
+        var checkId = "10"
+        dataSource = [
+                         ["type":"no","name":"张三","sex":"男","icon":"my_def_photo","birthday":"2017-10-11"],
+                         ["type":"no","name":"李四","sex":"男","icon":"my_def_photo","birthday":"2011-12-30"],
+                         ["type":"no","name":"王五","sex":"女","icon":"my_def_photo","birthday":"2014-9-10"],
+                         ["type":"no","name":"JIM","sex":"赵六","icon":"my_def_photo","birthday":"2008-10-1"]]
+        for i in 0...dataSource.count {
+            let idex = dataSource[i+1]
+            if idex == nil {
+                checkId = "去了一侧错误值"
+            }
+        }
+
+    }
    
     override func didReceiveMemoryWarning() {
         
     }
 }
-
+/*
+ // 单纯转换sil
+ swiftc -emit-sil main.swift > ./main.sil
+ // 反解sil中混淆的字符串
+ xcrun swift-demangle s4main1tAA10TeachModelCvp
+ // 完整版
+ swiftc -emit-sil `文件名`.swift | xcrun swift-demangle > `文件名`.sil  && open `文件名`.sil
+ swiftc  -dump-ast main.swift ast抽象语法树
+ */
 //扩展可以添加新的计算属性，但它们不能添加存储属性，或向现有属性添加属性观察者
 //扩展可以向类添加新的便利构造器，但是它们不能向类添加新的指定构造器或析构器。指定构造器或析构器必须始终由原始类实现提供。
 //如果使用扩展将构造器添加到值类型中，该值类型为其所有存储属性提供默认值，并且没有任何自定义构造器，则可以在扩展的构造器中调用该值类型的默认构造器和全能构造器。
@@ -216,11 +260,58 @@ extension SetupViewController {
         tableView.sectionFooterHeight = 0.01;
         tableView.reloadData()
     }
+    func printPointer<T>(ptr: UnsafePointer<T>)  {
+        print(ptr)
+    }
     func test() {
         
-        ///TODO: 测试
+        //TODO: 测试
         let oneInch = 25.4.mm
         print("One inch is \(oneInch) meters")
+        
+        var stringTest = "12121212HHHH"
+        var newStringTest = stringTest
+        print("最初: %p", stringTest)
+        print("修改后: %p", newStringTest)
+        printPointer(ptr: &stringTest)
+        printPointer(ptr: &newStringTest)
+
+        var str1 = NSString(string: "123")
+        var str2 = str1.copy() as!  NSString
+        var str3 = str1.mutableCopy() as! NSMutableString
+        print("最初: %p", str1)
+        print("copy后: %p", str2)
+        print("mutableCopy后: %p", str3)
+        printPointer(ptr: &str1)
+        printPointer(ptr: &str2)
+        printPointer(ptr: &str3)
+        
+        print("我是分割线")
+
+//        let arrayData = ["dfasd","啊的"]
+        var arrayData = NSArray(arrayLiteral: NSString(string: "dfasd"),NSNumber(value: 12))
+        var arrayCopy = arrayData.copy() as!  NSArray
+        var arrayMutableCopy = arrayData.mutableCopy() as! NSMutableArray
+
+        printPointer(ptr: &arrayData)
+        printPointer(ptr: &arrayCopy)
+        printPointer(ptr: &arrayMutableCopy)
+        NSLog("最初: %p", arrayData)
+        NSLog("copy: %p", arrayCopy)
+        NSLog("mutableCopy: %p", arrayMutableCopy)
+        
+        var a = 3
+        let b = a
+        a += 1
+        print("复制对象\(b)")
+        let arr1 = [3,4,5];
+        let arr2 = arr1 //copy 速度慢 //直接指向arr1
+        print("复制对象\(arr2)")
+        if arr1==arr1{
+            print("复制对象")
+        }
+        // 变量传递 基本类型值 生成副本
+
         // Prints "One inch is 0.0254 meters"
         let threeFeet = 3.ft
         print("Three feet is \(threeFeet) meters")
@@ -570,7 +661,7 @@ class Music{
     
     //下面这两个是便利构造方法，一个类也可以有多个便利构造方法
     //便利构造函数通常用在对系统的类进行构造函数的扩充时使用
-    //1、//便利构造函数通常都是写在extension里面
+    //1、便利构造函数通常都是写在extension里面
     //2、便利函数init前面需要加载convenience
     //3、在便利构造函数中需要明确的调用self.init()
     convenience init(singer:String, time:Double, zone:String, turnType:String){

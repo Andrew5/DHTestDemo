@@ -1,7 +1,7 @@
 #ifndef dhkit_hook
 #define dhkit_hook
+#define DHKIT_EXPORT __attribute__((visibility("default")))
 
-#include "common.h"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>

@@ -1,0 +1,21 @@
+//
+//  AppStoreStyleTableViewCell.h
+//  testSingature_N
+//
+//  Created by rilakkuma on 2022/10/26.
+//
+
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface AppStoreStyleTableViewCell : UITableViewCell
+@property (nonatomic,strong) UIImageView *leftview;
+
+@property (nonatomic,strong) UIImageView *rightview;
+
+
+@property (nonatomic,strong) UILabel *showLb;
+@end
+
+NS_ASSUME_NONNULL_END

@@ -1,0 +1,6 @@
+framework module CocoaPicker {
+  umbrella header "CocoaPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

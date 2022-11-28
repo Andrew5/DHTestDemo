@@ -1,0 +1,6 @@
+framework module Fuzzywuzzy_swift {
+  umbrella header "Fuzzywuzzy_swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -58,7 +58,6 @@
         _textView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         _textView.backgroundColor = [UIColor clearColor];
         _textView.font = [UIFont systemFontOfSize:18.0f];
-        
         _textView.scrollEnabled = NO;
         _textView.showsVerticalScrollIndicator = NO;
         _textView.showsHorizontalScrollIndicator = NO;

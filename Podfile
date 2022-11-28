@@ -10,24 +10,25 @@ def shared_pods
   #  pod 'SwiftDemo',:path => '../SwiftDemo'
   #  pod 'WaterMarkAssemble',:path => '../WaterMarkAssemble'
   pod 'GlobalButtonSwift'#,:git => 'https://github.com/Andrew5/GlobalButtonSwift.git'
-  pod 'GlobalButton'#,:path => '../GlobalButton',:subspecs => ['complex']
-  
+  pod 'GlobalButton',:subspecs => ['complex'],:path => '../GlobalButton'
   pod 'MyHelloWord',      :path => '../MyHelloWord'
   pod 'LearnRAC',         :path => '../LearnRAC'
   pod 'IMChatKeyboards',  :path => '../IMChatKeyboards'
   pod 'MVPGrowthModel',   :path => '../MVPGrowthModel'
   pod 'CustomerScroller', :path => '../CustomerScroller'
-  pod 'CategoryRelyon',   :path => '../CategoryRelyon'
+  pod 'CategoryRelyon',   :path => '../CategoryRelyon',:subspecs => ['OnlyCategory'],:inhibit_warnings =>true
   pod 'DHUIKitModule',    :path => '../DHUIKitModule'
   pod 'TouchBut',         :path => '../TouchBut'
   pod 'FliqloClick',      :path => '../FliqloClick'
   pod 'DHTabBar',         :path => '../DHTabBar'
-  
+  pod 'DerivedRequest',   :path => '../DerivedRequest'
+  pod 'DynamicLaunchImage',:path => '../DynamicLaunchImage'
   pod 'DHBasicKnowledge'  ,:path => '../DHBasicKnowledge'
   pod 'BlockKnowledge'    ,:path => '../BlockKnowledge'
   pod 'MyPodTestPro'      ,:path => '../MyPodTestPro',:subspecs => ['Pro'] #:configurations => ['Pro']#:podspec => 'https://example.com/JSONKit.podspec'
   pod 'MVVMTableViewDemo' ,:path => '../MVVMTableViewDemo'
   pod 'MultithreadingKnowledge',:path => '../MultithreadingKnowledge'
+  pod 'GKNavigationBar',:path => '../GKNavigationBar'
 
   #待修复
   pod 'RHScan',           :path => '../RHScan'
@@ -35,7 +36,20 @@ def shared_pods
   pod 'VTAntiScreenCapture',:path => '../VTAntiScreenCapture'
   
 end
+def swift_pods
+  # swift
+  pod 'SwiftyJSON','5.0.0'
+  pod 'RxSwift','6.2.0'
+  pod 'SnapKit','5.0.1'
+  pod 'Moya'
+  pod 'ObjectMapper','~> 3.5.2'
+  pod 'HandyJSON'
+  pod 'Kingfisher'
+  pod 'Alamofire'
+#  pod 'graphql'
+  pod 'Fuzzywuzzy_swift', :git=> 'https://github.com/lxian/Fuzzywuzzy_swift.git'
 
+  end
 def commonlyUsed
   # 内存
   # pod 'AMLeaksFinder',            :git => 'https://github.com/liangdahong/AMLeaksFinder.git', :tag => '2.1.3',:branch => 'Debug'
@@ -60,31 +74,24 @@ def commonlyUsed
   #  pod 'YQImageCompressor'
 #  pod 'YYCategories'
 #  pod 'YYText'
-  pod 'YYKit'
+  pod 'YYKit',:inhibit_warnings =>true
   pod 'SVProgressHUD'
   pod 'MBProgressHUD'
   pod 'IQKeyboardManager'
   pod "BeeHive", '1.1.1'#https://github.com/alibaba/BeeHive/blob/master/README-CN.md
   pod 'ZYGCDTimer'
   pod 'Debugo'
-  # swift
-  pod 'SwiftyJSON','5.0.0'
-  pod 'RxSwift','6.2.0'
-  pod 'SnapKit','5.0.1'
-  pod 'Moya'
-  pod 'ObjectMapper','~> 3.5.2'
-  pod 'HandyJSON'
-  pod 'Kingfisher'
-  pod 'Alamofire'
+  pod "CocoaPicker"
+
   # 数据库
   pod 'FMDB' ,:git =>'https://github.com/ccgus/fmdb.git'#,             :source =>'https://github.com/CocoaPods/Specs.git'
   # 文件保存
-  pod 'SAMKeychain',      '1.5.3',:source =>'https://github.com/CocoaPods/Specs.git'
+  pod 'SAMKeychain',      '1.5.3',:source =>'https://github.com/CocoaPods/Specs.git',:inhibit_warnings =>true
   # 路由
   pod 'MGJRouter', :git => "https://github.com/lyujunwei/MGJRouter.git"
   pod 'CTMediator'
   # 布局
-  pod 'Masonry'
+  pod 'Masonry',:inhibit_warnings =>true
   pod 'SDAutoLayout','~>2.2.1'
   pod 'YogaKit' #提供给Objective-C和Swift使用
   pod 'IGListKit','2.1.0'
@@ -94,19 +101,21 @@ def commonlyUsed
 #  pod 'Texture', '~> 3.1.0'
   pod 'OpenUDID'#,:git=>'https://github.com/ylechelle/OpenUDID.git'#,                 :source =>'https://github.com/CocoaPods/Specs.git'
   # Reactivecocoa 是git上面的一个开源框架,讲究的是万物皆信号
-  pod 'ReactiveObjC'
+  pod 'ReactiveObjC',:inhibit_warnings =>true
   # 非越狱插件
   #  pod 'WechatPod'
   pod 'JKKVOHelper', '~> 0.1.29'
   pod 'RCLighting'
   pod 'MJExtension'
   pod 'SwipeView'
-  pod 'GCDWebServer'
+  pod 'GCDWebServer',:inhibit_warnings =>true
   pod 'AFNetworking'
+#  pod 'CocoaH÷TTPServer'
+
   #iOS防截屏/录屏的实现https://m.weibo.cn/status/4738671431911826?wm=3333_2001&from=10C2093010&sourcetype=weixin
   #  https://mp.weixin.qq.com/s/L8Bv7GmZ7uKYgeGCEX9lXA
-  pod 'FDFullscreenPopGesture', '~> 1.1'
-  pod  'YKWoodpecker'
+  pod 'FDFullscreenPopGesture', '~> 1.1',:inhibit_warnings =>true
+  pod 'YKWoodpecker'
   # nsf_oc_demo
   #  iOS开发-图片离线鉴黄 基于TensorFlow nsfw oc版
   #  下载地址
@@ -140,9 +149,9 @@ def commonlyUsed
   pod 'RBBAnimation'                  #基于块的动画制作简单，带有简化功能和一个 CASpringAnimation 替换。
   pod 'TABAnimated'                   #-> 很不错(TableView Cell加载动画)  ->一个由iOS原生组件映射出骨架屏的框架，包含快速植入，低耦合，兼容复杂视图等特点，提供国内主流骨架屏动画的加载方案，同时支持上拉加载更多、定制动画。
   pod 'VCTransitionsLibrary'          #vc push, tabvc 转场动画
-  pod 'SXWaveAnimate'                 #水波纹,圆圈进度条与动画  ->  不错
+  pod 'SXWaveAnimate',:inhibit_warnings =>true                 #水波纹,圆圈进度条与动画  ->  不错
   pod 'PopupDialog'                   #弹窗动画
-  pod 'PopMenu'                       #PopMenu 是受新浪微博/网易应用启发的弹出动画菜单。
+  pod 'PopMenu',:inhibit_warnings =>true                       #PopMenu 是受新浪微博/网易应用启发的弹出动画菜单。
   pod 'pop'                           #facebook开源的一套动画，有卡片动画效果，类似陌陌首页发现动画
   pod 'IBAnimatable'                  #使用 IBAnimatable 在 Interface Builder 中为 App Store 就绪的应用程序设计和原型定制 UI、交互、导航、过渡和动画。
   #  popping                             #动画集 ->https://github.com/schneiderandre/popping
@@ -158,13 +167,15 @@ def commonlyUsed
   #  LLDynamicLaunchScreen https://www.jianshu.com/p/d8d2145c6333
   #  https://github.com/cyq1162/Sagit
   pod 'HHTimeProfiler'
-
+  pod 'PGDatePicker',:git => 'https://github.com/xiaozhuxiong121/PGDatePicker.git',:inhibit_warnings =>true
+  pod 'CLImageEditor'
+  pod 'SDCycleScrollView',:inhibit_warnings =>true
 end
 
 target 'testSingature_N' do
   shared_pods
   commonlyUsed
-  
+  swift_pods
 end
 
 #pre_install do |installer|
@@ -263,6 +274,24 @@ end
 #    end
 #  end
 #end
+#这个钩子允许您在项目配置编译环境
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+              puts "===================>⬆️  target name #{target.name}"
+        target.build_configurations.each do |config|
+#              puts "===================>⬆️  config name #{config.name}"
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+            #        config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+#            if target.name == 'YYKit'
+#              config.build_settings["VALID_ARCHS"] = 'x86_64 armv7 arm64'
+#            config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+#            end
+#            if target.name == 'HHTimeProfiler'
+#              config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+#            end
+        end
+    end
+end
 #这个钩子允许您在项目被写入磁盘后进行更改。
 #post_integrate do |installer|
 # some change after project write to disk

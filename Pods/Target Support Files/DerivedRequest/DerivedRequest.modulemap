@@ -1,0 +1,6 @@
+framework module DerivedRequest {
+  umbrella header "DerivedRequest-umbrella.h"
+
+  export *
+  module * { export * }
+}

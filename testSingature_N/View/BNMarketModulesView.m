@@ -6,6 +6,11 @@
 //
 
 #import "BNMarketModulesView.h"
+
+
+#define ViewWidth self.bounds.size.width
+#define ViewHeight self.bounds.size.height
+
 //#import "NSDate+YTCalendar.h"
 //
 @interface BNMarketModulesView ()
@@ -231,4 +236,170 @@
 //    CGContextDrawTiledImage(context, CGRectMake(0, 0, 20, 20), image.CGImage);//平铺图
   
 }
-@end
+
+- (void)initRoundView {
+    
+    float MScreenScaleY = 0.5;
+    //此处不设置self,layer.clipToBounds = YES;属性，否则阴影展示不出来，因为没有设置self,layer.clipToBounds = YES，所以控件四周圆角直接设置self.layer.cornRadious = 10，是无效的，所以必须自己画圆角
+    //孔的半径
+    CGFloat roundSpace = 6 * MScreenScaleY;
+    //孔距离顶部高度
+    CGFloat topHeight = (ViewHeight - 6)/2; //ViewHeight * MScreenScaleY;
+    //四个角的绘制
+    CGFloat roundCorner = 8 * MScreenScaleY;
+    
+    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+    //起点
+    [bezierPath moveToPoint:CGPointMake(roundCorner , 0)];
+    
+    //画4周圆角 ----左上圆角
+    [bezierPath addArcWithCenter:CGPointMake(roundCorner, roundCorner) radius:roundCorner startAngle:1.5 * M_PI endAngle:M_PI clockwise:NO];
+    
+    
+    
+    //画线
+    [bezierPath addLineToPoint:CGPointMake(0, topHeight)];
+    //左半圆
+    [bezierPath addArcWithCenter:CGPointMake(0, topHeight + roundSpace) radius:roundSpace startAngle:1.5 * M_PI endAngle:0.5* M_PI clockwise:YES];
+    [bezierPath addLineToPoint:CGPointMake(0, ViewHeight - roundCorner)];
+    //画4周圆角 ----左下圆角
+    [bezierPath addArcWithCenter:CGPointMake(roundCorner, ViewHeight - roundCorner) radius:roundCorner startAngle:M_PI endAngle: 0.5 *M_PI clockwise:NO];
+    
+    
+    
+    [bezierPath addLineToPoint:CGPointMake(ViewWidth - roundCorner, ViewHeight)];
+    //画4周圆角 ----右下圆角
+    [bezierPath addArcWithCenter:CGPointMake(ViewWidth - roundCorner, ViewHeight - roundCorner) radius:roundCorner startAngle:0.5 *M_PI endAngle: 0.1 *M_PI clockwise:NO];
+    //右半圆
+    [bezierPath addArcWithCenter:CGPointMake(ViewWidth, topHeight + roundSpace) radius:roundSpace startAngle:0.5* M_PI endAngle:1.5 * M_PI clockwise:YES];
+    //    [bezierPath addLineToPoint:CGPointMake(ViewWidth, 0)];
+    //    //画4周圆角 ----右上圆角
+    [bezierPath addArcWithCenter:CGPointMake(ViewWidth - roundCorner, roundCorner) radius:roundCorner startAngle:0 endAngle: 1.5 * M_PI clockwise:NO];
+    [bezierPath addLineToPoint:CGPointMake(roundCorner, 0)];
+    
+    //    [bezierPath closePath];
+    //此处轮廓绘制完毕
+    //接下来绘制阴影CAShapeLayer必须借助于UIBezierPath
+    CAShapeLayer *pathLayer = [CAShapeLayer layer];
+    pathLayer.fillColor = UIColor.blueColor.CGColor; // 默认为blackColor//layer填充色
+    pathLayer.strokeColor = UIColor.redColor.CGColor; //边框颜色
+    pathLayer.path = bezierPath.CGPath;
+    //    pathLayer.shadowColor = [UIColor blackColor].CGColor;
+    //    // 阴影偏移，默认(0, -3)
+    //    pathLayer.shadowOffset = CGSizeMake(0,3);
+    //    pathLayer.shadowOpacity = 0.3;
+    //    // 阴影半径，默认3
+    //    pathLayer.shadowRadius = 3;
+    [self.layer addSublayer:pathLayer];
+}
+//- (void)drawRect:(CGRect)rect
+//{
+//    float MScreenScaleY =0.5;
+//    //圆心 (height - 直径）/2
+//    float roundPoint =(self.frame.size.height - 6)/2;
+//    //此处不设置self,layer.clipToBounds = YES;属性，否则阴影展示不出来，因为没有设置self,layer.clipToBounds = YES，所以控件四周圆角直接设置self.layer.cornRadious = 10，是无效的，所以必须自己画圆角
+//    //孔距离顶部高度
+//    CGFloat topHeight = self.frame.size.height;// * MScreenScaleY;
+//    //孔的半径
+//    CGFloat roundSpace = 6 * MScreenScaleY;
+//    //四个角的绘制
+//    CGFloat roundCorner = 8 * MScreenScaleY;
+//    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+//    //起点
+//    [bezierPath moveToPoint:CGPointMake(roundCorner , 0)];
+//
+//    //画4周圆角 ----左上圆角
+//    [bezierPath addArcWithCenter:CGPointMake(roundCorner, roundCorner) radius:roundCorner startAngle:1.5 * M_PI endAngle: M_PI clockwise:NO];
+//    //画线
+//    [bezierPath addLineToPoint:CGPointMake(0, topHeight)];
+//    //左半圆
+//    [bezierPath addArcWithCenter:CGPointMake(0, roundPoint/*topHeight + roundSpace*/) radius:roundSpace startAngle:1.5 * M_PI endAngle:0.5* M_PI clockwise:YES];
+//    [bezierPath addLineToPoint:CGPointMake(0, ViewHeight - roundCorner)];
+//    //画4周圆角 ----左下圆角
+//    [bezierPath addArcWithCenter:CGPointMake(roundCorner, ViewHeight - roundCorner) radius:roundCorner startAngle:M_PI endAngle: 0.5 *M_PI clockwise:NO];
+//    [bezierPath addLineToPoint:CGPointMake(ViewWidth - roundCorner, ViewHeight)];
+//    //画4周圆角 ----右下圆角
+//    [bezierPath addArcWithCenter:CGPointMake(ViewWidth - roundCorner, ViewHeight - roundCorner) radius:roundCorner startAngle:0.5 *M_PI endAngle: 0 clockwise:NO];
+//    //右半圆
+//    [bezierPath addArcWithCenter:CGPointMake(ViewWidth, roundPoint/*topHeight + roundSpace*/) radius:roundSpace startAngle:0.5* M_PI endAngle:1.5 * M_PI clockwise:YES];
+//    [bezierPath addLineToPoint:CGPointMake(ViewWidth, 0)];
+//    //画4周圆角 ----右上圆角
+//    [bezierPath addArcWithCenter:CGPointMake(ViewWidth - roundCorner, roundCorner) radius:roundCorner startAngle:0 endAngle: 1.5 * M_PI clockwise:NO];
+//    [bezierPath addLineToPoint:CGPointMake(roundCorner, 0)];
+//    [bezierPath closePath];
+////此处轮廓绘制完毕
+////接下来绘制阴影CAShapeLayer必须借助于UIBezierPath
+//    CAShapeLayer *pathLayer = [CAShapeLayer layer];
+////    pathLayer.fillColor = [UIColor colorWithRed:0.97 green:0.94 blue:0.87 alpha:1].CGColor; // 默认为blackColor
+//    pathLayer.path = bezierPath.CGPath;
+////    pathLayer.shadowColor = [UIColor blackColor].CGColor;
+////    // 阴影偏移，默认(0, -3)
+////    pathLayer.shadowOffset = CGSizeMake(0,3);
+////    pathLayer.shadowOpacity = 0.3;
+////    // 阴影半径，默认3
+////    pathLayer.shadowRadius = 3;
+//    [self.layer addSublayer:pathLayer];
+//    //此处添加中间虚线
+////    [self drawLineOfDashByCAShapeLayer];
+//}
+- (void)initCustom {
+    
+    //    即用startAngle、endAngle表示弧度的起点、弧度的终点
+    //    弧度的起点 - startAngle： 0.25 * M_PI 或 -1.75 * M_PI
+    //    弧度的终点 - endAngle： 0.5 * M_PI 或 -1.5 * M_PI
+    //    clockwise，这一步是决定你的弧长怎么样的关键
+    //    如果设为YES，圆弧会从弧度的起点沿着顺时针方向画弧，遇到弧度的终点停止，
+    CGPoint line_start = CGPointMake(0, 30);
+    
+    CGPoint line_end = CGPointMake(100, 30);
+    
+    CGPoint circle_center = CGPointMake(85, 15);
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    
+    [path moveToPoint:line_start];
+    //
+    [path addLineToPoint:line_end];
+    
+    // 注意线画到这里其实只画了一条直线，但是调用addArcWithCenter方法路径会自动连线到圆弧的起点
+    
+    [path addArcWithCenter:circle_center radius:10 startAngle:0.25 * M_PI endAngle:- 1.5 * M_PI clockwise:NO];
+    
+    CAShapeLayer *shapeLayer=[CAShapeLayer layer];
+    
+    shapeLayer.path = path.CGPath;
+    
+    shapeLayer.fillColor = [UIColor clearColor].CGColor;//填充颜色
+    
+    shapeLayer.strokeColor = [UIColor blackColor].CGColor;//边框颜色
+    
+    shapeLayer.lineCap = @"round";
+    
+    [self.layer addSublayer:shapeLayer];
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+
+    //系统默认会忽略isUserInteractionEnabled设置为NO、隐藏、或者alpha小于等于0.01的视图
+
+    if (!self.isUserInteractionEnabled || self.isHidden || self.alpha <= 0.01) {
+
+    if ([self pointInside:point withEvent:event]) {
+
+        for (UIView *subview in [self.subviews reverseObjectEnumerator]) {
+
+            CGPoint convertedPoint = [subview convertPoint:point fromView:self];
+
+            UIView *hitTestView = [subview hitTest:convertedPoint withEvent:event];
+
+            if (hitTestView) {
+
+                return hitTestView;
+            }
+            
+        }
+    }
+    
+    }
+    return [super hitTest:point withEvent:event];
+}@end

@@ -26,7 +26,7 @@
   },
   "resource_bundles": {
     "DHProgressHUD": [
-      "DHUIKitModule/Assets/*.{png,json,imageset}"
+      "DHUIKitModule/Assets/*.{png,json,imageset,xib,xcassets}"
     ]
   }
 }

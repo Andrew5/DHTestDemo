@@ -18,7 +18,7 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "CategoryRelyon/Classes/**/*",
+  "default_subspecs": "OnlyCategory",
   "dependencies": {
     "Masonry": [
 
@@ -32,5 +32,21 @@
   },
   "user_target_xcconfig": {
     "ENABLE_STRICT_CHECKING_OF_OBJC_MSGSEND_CALLS": "NO"
-  }
+  },
+  "subspecs": [
+    {
+      "name": "OnlyCategory",
+      "source_files": [
+        "CategoryRelyon/Classes/OnlyCategory",
+        "CategoryRelyon/Classes/code"
+      ]
+    },
+    {
+      "name": "LoadCategory",
+      "source_files": [
+        "CategoryRelyon/Classes/LoadCategory",
+        "CategoryRelyon/Classes/code"
+      ]
+    }
+  ]
 }

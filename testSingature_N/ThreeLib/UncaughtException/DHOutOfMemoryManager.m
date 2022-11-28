@@ -13,7 +13,7 @@
 #import <mach/mach.h>
 #import <os/proc.h>
 #include <sys/stat.h>
-
+// https://www.jianshu.com/p/3f6775c02257
 static NSString *DHOOMPreviousBundleVersionKey = @"DHOOMPreviousBundleVersionKey";
 static NSString *DHOOMAppWasTerminatedKey = @"DHOOMAppWasTerminatedKey";
 static NSString *DHOOMAppWasInBackgroundKey = @"DHOOMAppWasInBackgroundKey";
@@ -354,6 +354,6 @@ static void DHIntentionalQuitHandler(int signal) {
     }
 }
 + (void)放弃方法 {
-    NSLog(@"放弃");
+    NSLog(@"放弃LRU");
 }
 @end

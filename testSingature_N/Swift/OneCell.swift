@@ -49,7 +49,16 @@ class SetupOneTableViewCell:UITableViewCell {
             make.left.right.equalTo(-8)
             make.height.equalTo(44);
         }
- 
+        
+        let bottomButton = DHCButton.button(withDHCType: .DHCButtonType1)
+        contentRootView.addSubview(bottomButton!)
+        bottomButton?.setTitle("测试", for: .normal)
+        bottomButton?.snp.makeConstraints { (make) in
+            make.top.equalTo(0)
+            make.right.equalTo(-100)
+            make.height.equalTo(44);
+            make.width.equalTo(100);
+        }
     }
     override func layoutSubviews() {
         super.layoutSubviews()
