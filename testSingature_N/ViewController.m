@@ -10,7 +10,8 @@
 #define UI(x) UIAdapter(x)
 #define UIRect(x,y,width,height) UIRectAdapter(x,y,width,height)
 #define yis 0.8
-#define  GYScreen_W   [UIScreen mainScreen].bounds.size.width
+#define GYScreen_W   [UIScreen mainScreen].bounds.size.width
+#define KEY_PATH(objc, property) ((void)objc.property, @(#property))
 
 #import <dlfcn.h>
 #import <netinet/in.h>
@@ -41,8 +42,13 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <MBProgressHUD.h>
 #import <DHUIKitModule/DHUIKitModule-umbrella.h>
-#import <DHBasicKnowledge/MasonryAutoViewController.h>
 
+#import "UIColor+KGExtension.h"
+#import "LYDefineFoundation.h"
+#import "UIImage+compressIMG.h"
+#import "UILabel+LhGray.h"
+#import "UIColor+LhGray.h"
+#import "DHTJumpControllerTool.h"
 
 #import "DHCustomerAssertHandler.h"
 #import "DHCustomAlertView.h"
@@ -215,41 +221,15 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [YYFPSLabel xw_addFPSLableOnWidnow];
     });
-    [MasonryAutoViewController d_release];
-//    [self test50];
+//    [MasonryAutoViewController d_release];
+    [self test14];
     NSString *resultStr = @"childSelectedBtn";
     if(resultStr && resultStr.length>0) {
         resultStr = [resultStr stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[resultStr substringToIndex:1] capitalizedString]];
         resultStr = [[@"set" stringByAppendingString:resultStr] stringByAppendingString:@":"];
     }
     NSLog(@"空%@",resultStr);
-    
-    
-    
-    UIImage* image = [UIImage imageNamed:@"slider-default-trackBackground"];
-    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0.0, 5.0, 0.0, 5.0) resizingMode:UIImageResizingModeStretch];
-    UIImageView *trackBackgroundImage = [[UIImageView alloc] initWithImage:image];
-
-    CGRect trackBackgroundRect;
-    
-    trackBackgroundRect.size = CGSizeMake(image.size.width-4, image.size.height/2);
-    
-    if(image.capInsets.top || image.capInsets.bottom)
-    {
-        trackBackgroundRect.size.height=30/2;
-    }
-    
-    if(image.capInsets.left || image.capInsets.right)
-    {
-        trackBackgroundRect.size.width=378-4;
-    }
-    
-    trackBackgroundRect.origin = CGPointMake(2, (30/2.0f) - (trackBackgroundRect.size.height/2.0f));
-    
-    trackBackgroundImage.frame = trackBackgroundRect;
-    
-    [self.view addSubview:trackBackgroundImage];
-
+    NSLog(@"属性 %@",KEY_PATH(self,alertViewCustom));
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -599,12 +579,23 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
     //ibtool --errors --warnings --output-format human-readable-text --compile TPDoctorIntroductionView.nib TPDoctorIntroductionView.xib
 }
 
+//TODO: 页面跳转
 - (void)test14 {
     // size不变 x = x+dx,y = y+dy,
 //   CGRectOffset(<#CGRect rect#>, <#CGFloat dx#>, <#CGFloat dy#>)
-    NSArray *array = [NSArray arrayWithObjects:@"324",@"3241", nil];
-    NSString *testString = array[2];
-    NSLog(@"测试结果 %@",testString);
+//    NSArray *array = [NSArray arrayWithObjects:@"324",@"3241", nil];
+//    NSString *testString = array[2];
+//    NSLog(@"测试结果 %@",testString);
+
+    // 约定好的规则(只针对push做操作)
+    NSDictionary *params = @{
+                             @"class" : @"YDYClaimGoalCustomerRequestInfoManageVC",
+                             @"property" : @{
+                                     @"ID" : @"123",
+                                     @"type" : @"dic"
+                                     }
+                             };
+    [DHTJumpControllerTool pushViewControllerWithParams:params];
 }
 
 /// TODO: swift

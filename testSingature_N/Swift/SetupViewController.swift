@@ -25,6 +25,7 @@ import CoreLocation
  print("test")
  }
  */
+@available(iOS 14.0, *)
 @objcMembers class SetupViewController : UIViewController,DHBridgeDelegate{
     
     //    lazy var tableView : UITableView = UITableView()
@@ -204,6 +205,7 @@ extension Int {
     }
 }
 
+@available(iOS 14.0, *)
 extension SetupViewController {
     func xxxView () {
         // 不会产生离屏渲染的方案
@@ -233,6 +235,7 @@ extension SetupViewController {
     }
 }
 ///MARK:  -设置UI界面相关
+@available(iOS 14.0, *)
 extension SetupViewController {
     /// 设置UI界面
     func setupUI() {
@@ -377,6 +380,7 @@ extension SetupViewController {
         //常量、变量、属性不能拥有比它们的类型更高的访问级别
     }
 }
+@available(iOS 14.0, *)
 extension SetupViewController : CLLocationManagerDelegate {
     //委托传回定位，获取最后一个
     func locationManager(manager:  CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -395,6 +399,7 @@ extension SetupViewController : CLLocationManagerDelegate {
 }
 
 // extension类似OC的category,也是只能扩充方法,不能扩充属性
+@available(iOS 14.0, *)
 extension SetupViewController : UITableViewDataSource, UITableViewDelegate{
     //cell 高度的设置
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -496,6 +501,7 @@ extension SetupViewController : UITableViewDataSource, UITableViewDelegate{
         //TODO: 在swift类中调用 oc的block.
         let bridgeVC = DHBridgeViewController.init()
         bridgeVC.secondDelegate = self
+        bridgeVC.view.backgroundColor = .white
         bridgeVC.hintBlock = {(param) -> () in
             print("在swift类中调用 oc的block吗？ \(param) 哈哈哈")
         }

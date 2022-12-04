@@ -27,6 +27,7 @@
         self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
 //        self.window.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
         ViewController *homePageVC = [[ViewController alloc] init];
+        //如果是故事板，window会自动生成并且关联到这个scene上
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homePageVC];
         self.window.rootViewController = nav;
         [self.window makeKeyAndVisible];

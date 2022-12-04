@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%@,%@",self.ID,self.type);
+
     // Do any additional setup after loading the view.
     self.manageView = [[DHJiugonggeView alloc] init];
     self.manageView.backgroundColor = UIColor.grayColor;

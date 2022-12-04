@@ -10,7 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YDYClaimGoalCustomerRequestInfoManageVCViewController : UIViewController
-
+//动画
+@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, copy) NSString *type;
 @end
 
 NS_ASSUME_NONNULL_END

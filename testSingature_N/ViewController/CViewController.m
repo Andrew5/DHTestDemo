@@ -16,6 +16,7 @@
 @implementation CViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%@,%@",self.ID,self.type);
     // 垃圾代码部分
     UILabel * examp_Attrb_LB1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 50)];
     examp_Attrb_LB1.backgroundColor = [UIColor colorWithRed:0.5 green:1 blue:0 alpha:0.2f];

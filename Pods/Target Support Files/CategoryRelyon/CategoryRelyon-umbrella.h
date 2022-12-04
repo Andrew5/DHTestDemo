@@ -49,6 +49,7 @@
 #import "UIColor+JFColor.h"
 #import "UIColor+KGExtension.h"
 #import "UIColor+WHColor.h"
+#import "UIDevice+StateHeight.h"
 #import "UIDevice+WHDevice.h"
 #import "UIGestureRecognizer+YYAdd.h"
 #import "UIImage+compressIMG.h"
