@@ -38,6 +38,7 @@
 		38196B982938FFAE00C8C66B /* UIColor+GrayColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196B922938FFAE00C8C66B /* UIColor+GrayColor.m */; };
 		38196B992938FFAE00C8C66B /* UIWebView+Gray.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196B942938FFAE00C8C66B /* UIWebView+Gray.m */; };
 		38196C19293CE99000C8C66B /* DHTJumpControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C18293CE99000C8C66B /* DHTJumpControllerTool.m */; };
+		38196C23293DE3F600C8C66B /* UIButton+ParamObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C22293DE3F600C8C66B /* UIButton+ParamObject.m */; };
 		3823B02728F06958005E173A /* DHJiugonggeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3823B02628F06958005E173A /* DHJiugonggeView.m */; };
 		3823B02B28F069CF005E173A /* DHJiugonggeLoadPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3823B02A28F069CF005E173A /* DHJiugonggeLoadPhoto.m */; };
 		382F572828F092AF00C80599 /* YDYSalesRecordDetailInfoListInfoItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 382F572728F092AF00C80599 /* YDYSalesRecordDetailInfoListInfoItemCell.m */; };
@@ -387,6 +388,8 @@
 		38196B942938FFAE00C8C66B /* UIWebView+Gray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Gray.m"; sourceTree = "<group>"; };
 		38196C17293CE99000C8C66B /* DHTJumpControllerTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTJumpControllerTool.h; sourceTree = "<group>"; };
 		38196C18293CE99000C8C66B /* DHTJumpControllerTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTJumpControllerTool.m; sourceTree = "<group>"; };
+		38196C21293DE3F600C8C66B /* UIButton+ParamObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ParamObject.h"; sourceTree = "<group>"; };
+		38196C22293DE3F600C8C66B /* UIButton+ParamObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ParamObject.m"; sourceTree = "<group>"; };
 		3823B02528F06958005E173A /* DHJiugonggeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHJiugonggeView.h; sourceTree = "<group>"; };
 		3823B02628F06958005E173A /* DHJiugonggeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHJiugonggeView.m; sourceTree = "<group>"; };
 		3823B02928F069CF005E173A /* DHJiugonggeLoadPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHJiugonggeLoadPhoto.h; sourceTree = "<group>"; };
@@ -1597,6 +1600,8 @@
 				385153C629087477003F25A9 /* UITableViewCell+CellShadows.m */,
 				38BE70F228B23ADE00EAF7DF /* UIView+UIScreenDisplaying.h */,
 				38BE70F328B23ADE00EAF7DF /* UIView+UIScreenDisplaying.m */,
+				38196C21293DE3F600C8C66B /* UIButton+ParamObject.h */,
+				38196C22293DE3F600C8C66B /* UIButton+ParamObject.m */,
 			);
 			path = PublicCategory;
 			sourceTree = "<group>";
@@ -2391,6 +2396,7 @@
 				38A5CD60290EA1920050701A /* UIBezierPath+Smoothing.m in Sources */,
 				38531AF728FE7A00004194D1 /* Tool.m in Sources */,
 				38FC53E528D36D64002FFCB1 /* TestAControl.m in Sources */,
+				38196C23293DE3F600C8C66B /* UIButton+ParamObject.m in Sources */,
 				38C311282938965200D8FC2B /* UIImage+GrayImage.m in Sources */,
 				386CCE632912BA5D005A8359 /* TitleScrollView.m in Sources */,
 				38C311292938965200D8FC2B /* UIImageView+GrayImageview.m in Sources */,

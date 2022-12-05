@@ -78,13 +78,11 @@
 }
 
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:CGRectMake(0, Screen_Height, Screen_Width, 15+15+38+94+76)];
     if (self) {
         self.backgroundColor =UIColor.grayColor;
-        
-       
         
         [self addSubview:self.collectionV];
         [self.collectionV mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -95,9 +93,7 @@
             make.height.equalTo(@(500));
         }];
         self.collectionV.hidden = YES;
-        
-      
-        
+
 //        __weak typeof(self) weakSelf = self;
         //开始定位
 //        self.locationModel.doneHandle = ^{
