@@ -223,7 +223,7 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
         [YYFPSLabel xw_addFPSLableOnWidnow];
     });
 //    [MasonryAutoViewController d_release];
-//    [self test14];
+    [self test14];
     NSString *resultStr = @"childSelectedBtn";
     if(resultStr && resultStr.length>0) {
         resultStr = [resultStr stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[resultStr substringToIndex:1] capitalizedString]];
@@ -232,14 +232,15 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
     NSLog(@"空%@",resultStr);
     NSLog(@"属性 %@",KEY_PATH(self,alertViewCustom));
     
-    UIButton*targetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    targetBtn.frame = CGRectMake(0, 100, 50,50);
-    targetBtn.tag =100;
-    [targetBtn setTitle:@"点我"forState:UIControlStateNormal];
-    [targetBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [targetBtn addTarget:self action:@selector(targetBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [targetBtn setInfo:@{@"id":@"12138",@"name":@"target-action"}];
-    [self.view addSubview:targetBtn];
+//    UIButton*targetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    targetBtn.frame = CGRectMake(0, 100, 50,50);
+//    targetBtn.tag =100;
+//    [targetBtn setTitle:@"点我"forState:UIControlStateNormal];
+//    [targetBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    [targetBtn addTarget:self action:@selector(targetBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+//    [targetBtn setInfo:@{@"id":@"12138",@"name":@"target-action"}];
+//    [self.view addSubview:targetBtn];
+
 }
 - (void)targetBtnClicked:(UIButton*)sender {
     NSLog(@"我被点击了");
@@ -603,7 +604,9 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
 //    NSArray *array = [NSArray arrayWithObjects:@"324",@"3241", nil];
 //    NSString *testString = array[2];
 //    NSLog(@"测试结果 %@",testString);
-
+    NSData *data = [NSData dataWithBytes:(unsigned char []){0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x61, 0x72} length:9];
+    NSString *key = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    SEL medth = NSSelectorFromString(key);
     // 约定好的规则(只针对push做操作)
     NSDictionary *params = @{
                              @"class" : @"YDYClaimGoalCustomerRequestInfoManageVC",
