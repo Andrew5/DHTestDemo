@@ -13,6 +13,12 @@
 #define GYScreen_W   [UIScreen mainScreen].bounds.size.width
 #define KEY_PATH(objc, property) ((void)objc.property, @(#property))
 
+#define IOS_CELLULAR    @"pdp_ip0"
+#define IOS_WIFI        @"en0"
+#define IOS_VPN         @"utun0"
+#define IP_ADDR_IPv4    @"ipv4"
+#define IP_ADDR_IPv6    @"ipv6"
+
 #import <dlfcn.h>
 #import <netinet/in.h>
 #import <mach/mach.h>
@@ -22,6 +28,7 @@
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
+#include <sys/sysctl.h>
 
 #import "ViewController.h"
 
@@ -91,7 +98,11 @@
 #import "ZEDSoundTool.h"
 #import "YYFPSLabel.h"
 #import "CocoaPicker-umbrella.h"
-
+#import "Character.h"
+#import "SwordStrategy.h"
+#import "FistStrategy.h"
+#import "GunStrategy.h"
+#import "JYBLoading.h"
 // pod install --verbose --no-repo-update //只安装新添加的库，已更新的库忽略
 // pod update 类库名称 --verbose --no-repo-update // 只更新指定的库，其它库忽略
 
@@ -191,7 +202,7 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
 @property (nonatomic, strong) YBUnlimitedSlideViewController *unlimitedSlideVC;
 
 @property (nonatomic, strong) MBProgressHUD *hud;
-
+@property (nonatomic, strong) MASConstraint *rightConstraint;
 @end
 
 @implementation ViewController
@@ -215,15 +226,17 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
     } else {
         // Fallback on earlier versions
     }
+//    NSLog(@"%@",[self getIPAddresses]);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [YYFPSLabel xw_addFPSLableOnWidnow];
+    });
     NSString *u = @"adfas";
     if (!u) {
         NSLog(@"空");
     }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [YYFPSLabel xw_addFPSLableOnWidnow];
-    });
-//    [MasonryAutoViewController d_release];
-    [self test14];
+    //    [MasonryAutoViewController d_release];
+    [self test13];
+    
     NSString *resultStr = @"childSelectedBtn";
     if(resultStr && resultStr.length>0) {
         resultStr = [resultStr stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[resultStr substringToIndex:1] capitalizedString]];
@@ -232,21 +245,75 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
     NSLog(@"空%@",resultStr);
     NSLog(@"属性 %@",KEY_PATH(self,alertViewCustom));
     
-//    UIButton*targetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    targetBtn.frame = CGRectMake(0, 100, 50,50);
-//    targetBtn.tag =100;
-//    [targetBtn setTitle:@"点我"forState:UIControlStateNormal];
-//    [targetBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-//    [targetBtn addTarget:self action:@selector(targetBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-//    [targetBtn setInfo:@{@"id":@"12138",@"name":@"target-action"}];
-//    [self.view addSubview:targetBtn];
-
+   
+    
+        UIButton*targetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        targetBtn.frame = CGRectMake(0, 100, 50,50);
+//        targetBtn.tag =100;
+        [targetBtn setTitle:@"点我"forState:UIControlStateNormal];
+        [targetBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [targetBtn addTarget:self action:@selector(targetBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [targetBtn setInfo:@{@"id":@"12138",@"name":@"target-action"}];
+        [self.view addSubview:targetBtn];
+        [targetBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view).offset(100);
+            make.size.mas_equalTo(CGSizeMake(100, 100));
+            _rightConstraint = make.right.mas_equalTo(self.view.mas_right).offset(-20);
+        }];
+    //    UIScrollView  *scrollView = [[UIScrollView alloc] init];
+    //        [self.view addSubview:scrollView];
+    //    scrollView.backgroundColor = UIColor.redColor;
+    //        [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //            NSLog(@"建立约束");
+    //            make.edges.mas_equalTo(UIEdgeInsetsMake(90, 90, 90, 90));
+    //        }];
+    //    // 多加的这句
+    ////        [scrollView.superview layoutIfNeeded];
+    //        NSLog(@"直接获取frame：%@", scrollView);
+    //        // 只要下一桢刷新
+    //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //            NSLog(@"0.1秒后获取frame：%@", scrollView);
+    //        });
+    for(NSString *fontfamilyname in [UIFont familyNames])
+    {
+        NSLog(@"family:'%@'",fontfamilyname);
+        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
+        {
+            NSLog(@"\tfont:'%@'",fontName);
+        }
+        NSLog(@"-------------");
+    }
+    /*
+     + (NSString *)getIDFV
+     {
+      NSString *IDFV = (NSString *)[MYKeyChainTool load:@"IDFV"];
+      
+      if ([IDFV isEqualToString:@""] || !IDFV) {
+      
+       IDFV = [UIDevice currentDevice].identifierForVendor.UUIDString;
+       [MYKeyChainTool save:@"IDFV" data:IDFV];
+      }
+      
+      return IDFV;
+     }
+     */
+    // https://www.jianshu.com/p/40f2a026c41b
+    
 }
 - (void)targetBtnClicked:(UIButton*)sender {
     NSLog(@"我被点击了");
     NSLog(@"tag:%ld",(long)sender.tag);
     NSDictionary*info = sender.info;
     NSLog(@"%@",info);
+    
+    //告知需要更改约束
+//    [self.view setNeedsUpdateConstraints];
+    [UIView animateWithDuration:3 animations:^{
+        [sender mas_updateConstraints:^(MASConstraintMaker *make) {
+            self.rightConstraint.mas_equalTo(-100);
+        }];
+        [self.view layoutIfNeeded];
+    }];
     
 }
 
@@ -256,6 +323,63 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
     [self.speedMonitor stopNetworkSpeedMonitor];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NetworkDownloadSpeedNotificationKey object:nil];
 }
+
+//- (NSString *)getIPAddress:(BOOL)preferIPv4 {
+//
+//    NSArray *searchArray = preferIPv4 ?
+//    @[ IOS_VPN @"/" IP_ADDR_IPv4, IOS_VPN @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_WIFI @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6 ] :
+//    @[ IOS_VPN @"/" IP_ADDR_IPv6, IOS_VPN @"/" IP_ADDR_IPv4, IOS_WIFI @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4 ] ;
+//
+//    NSDictionary *addresses = [self getIPAddresses];getIPAddresses
+//    NSLog(@"addresses: %@", addresses);
+//    __block NSString *address;
+//    [searchArray enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL stop) {
+//         address = addresses[key];
+//         if(address) *stop = YES;
+//     }];
+//    return address ? address : @"0.0.0.0";
+//}
+//
+//- (NSDictionary *)getIPAddresses {
+//    NSMutableDictionary *addresses = [NSMutableDictionary dictionaryWithCapacity:8];
+//
+//    // retrieve the current interfaces - returns 0 on success
+//    struct ifaddrs *interfaces;
+//    if(!getifaddrs(&interfaces)) {
+//        // Loop through linked list of interfaces
+//        struct ifaddrs *interface;
+//        for(interface=interfaces; interface; interface=interface->ifa_next) {
+//            if(!(interface->ifa_flags & IFF_UP) || (interface->ifa_flags & IFF_LOOPBACK)) {
+//                continue; // deeply nested code harder to read
+//            }
+//            const struct sockaddr_in addr = (const struct sockaddr_in)interface->ifa_addr;
+//            char addrBuf[ MAX(INET_ADDRSTRLEN, INET6_ADDRSTRLEN) ];
+//                              // 协议族
+//            if(addr && (addr->sin_family==AF_INET || addr->sin_family==AF_INET6)) {
+//                NSString *name = [NSString stringWithUTF8String:interface->ifa_name];
+//                NSString *type;
+//                if(addr->sin_family == AF_INET) {
+//                                          // intenet地址信息，详细内容之后讨论
+//                    if(inet_ntop(AF_INET, &addr->sin_addr, addrBuf, INET_ADDRSTRLEN)) {
+//                        type = IP_ADDR_IPv4;
+//                    }
+//                } else {
+//                    const struct sockaddr_in6 addr6 = (const struct sockaddr_in6)interface->ifa_addr;
+//                    if(inet_ntop(AF_INET6, &addr6->sin6_addr, addrBuf, INET6_ADDRSTRLEN)) {
+//                        type = IP_ADDR_IPv6;
+//                    }
+//                }
+//                if(type) {
+//                    NSString *key = [NSString stringWithFormat:@"%@/%@", name, type];
+//                    addresses[key] = [NSString stringWithUTF8String:addrBuf];
+//                }
+//            }
+//        }
+//        // Free memory
+//        freeifaddrs(interfaces);
+//    }
+//    return [addresses count] ? addresses : nil;
+//}
 
 // 获取子视图
 - (void)getSub:(UIView *)view andLevel:(int)level {
@@ -298,6 +422,12 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
                 _viewroot.height = 100.;
             }
 //        }
+    }
+}
+
+- (void)loadManyDatas:(void(^)(NSString * infor))inforBlock; {
+    for (int i = 0; i< 200; i++ ){
+        NSLog(@"i am test performance");
     }
 }
 
@@ -594,7 +724,46 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
     } else {
         language = @"en";
     }
+    // 创建一个人物
+    Character *character = [[Character alloc] init];
+
+    // 为人物选择一种攻击方式
+    character.strategy = [[SwordStrategy alloc] init];
+
+    // 人物攻击
+    [character attack];
+
+    // 为人物选择另一种攻击方式
+    character.strategy = [[FistStrategy alloc] init];
+
+    // 人物攻击
+    [character attack];
+
+    // 为人物选择另一种攻击方式
+    character.strategy = [[GunStrategy alloc] init];
+
+    // 人物攻击
+    [character attack];
+
     //ibtool --errors --warnings --output-format human-readable-text --compile TPDoctorIntroductionView.nib TPDoctorIntroductionView.xib
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(90, 90, 200, 40)];
+    [self.view addSubview:button];
+    [button setTitle:@"呵呵哒" forState:UIControlStateNormal];
+    NSLog(@"%@", button);
+    NSLog(@"%@", button.titleLabel);
+    
+    [button layoutIfNeeded];
+    NSLog(@"%@", button);
+    NSLog(@"%@", button.titleLabel);
+    
+    JYBLoading *Loading = [[JYBLoading alloc]initWithView:self.view];
+    Loading.plateOffset =  UIOffsetMake(0, -40);
+    [self.view addSubview:Loading];
+    Loading.type = JYBLoadingTypeLoadingTipsRoll ;
+
+    [Loading show];
+
 }
 
 //TODO: 页面跳转

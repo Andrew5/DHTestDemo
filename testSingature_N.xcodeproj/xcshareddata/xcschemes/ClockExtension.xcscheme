@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "386D7423290AF6F7009FCF21"
+               BlueprintIdentifier = "3867E7CD291EB3A600CD1BCD"
                BuildableName = "ClockExtension.appex"
                BlueprintName = "ClockExtension"
                ReferencedContainer = "container:testSingature_N.xcodeproj">

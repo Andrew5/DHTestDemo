@@ -111,8 +111,8 @@
                                 // 将对象名转换为对象的类型，将新的对象字典转模型（递归）
                                 Class class = NSClassFromString(type);
                                 NSLog(@"%@",class);
-                                id viewController = [[class alloc] init];
-                                NSLog(@"statusBar：%@",  [viewController objectForKey:@"statusBar"]);
+//                                id viewController = [[class alloc] init];
+//                                NSLog(@"statusBar：%@",  [viewController objectForKey:@"statusBar"]);
                                 
                                 unsigned int count11;
                                 Ivar *ivarList1 = class_copyIvarList(class, &count11);

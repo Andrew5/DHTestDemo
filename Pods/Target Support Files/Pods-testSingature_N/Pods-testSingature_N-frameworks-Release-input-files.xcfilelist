@@ -27,7 +27,6 @@ ${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework
 ${BUILT_PRODUCTS_DIR}/GKNavigationBar/GKNavigationBar.framework
 ${BUILT_PRODUCTS_DIR}/GlobalButton/GlobalButton.framework
 ${BUILT_PRODUCTS_DIR}/GlobalButtonSwift/GlobalButtonSwift.framework
-${BUILT_PRODUCTS_DIR}/HHTimeProfiler/HHTimeProfiler.framework
 ${BUILT_PRODUCTS_DIR}/HHTransition/HHTransition.framework
 ${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework
 ${BUILT_PRODUCTS_DIR}/Hero/Hero.framework

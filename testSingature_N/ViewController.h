@@ -9,6 +9,7 @@
 
 @interface ViewController : UIViewController
 
+- (void)loadManyDatas:(void(^)(NSString * infor))inforBlock;
 
 @end
 

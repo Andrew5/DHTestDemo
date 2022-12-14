@@ -96,7 +96,6 @@ PODS:
   - GlobalButtonSwift (0.1.1)
   - HandyJSON (5.0.2)
   - Hero (1.6.2)
-  - HHTimeProfiler (1.2.3)
   - HHTransition (3.1.0)
   - IBAnimatable (6.1.0)
   - IGListKit (2.1.0):
@@ -315,7 +314,6 @@ DEPENDENCIES:
   - GlobalButtonSwift
   - HandyJSON
   - Hero
-  - HHTimeProfiler
   - HHTransition
   - IBAnimatable
   - IGListKit (= 2.1.0)
@@ -389,7 +387,6 @@ SPEC REPOS:
     - GlobalButtonSwift
     - HandyJSON
     - Hero
-    - HHTimeProfiler
     - HHTransition
     - IBAnimatable
     - IGListKit
@@ -546,7 +543,6 @@ SPEC CHECKSUMS:
   GlobalButtonSwift: 1a4adef0cfa901555a7614b9e22f725282c61dd5
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   Hero: c69009dbc9e2f0472e081adc644dba05fcedae72
-  HHTimeProfiler: 2ec63cb266d1358f52f5a46cac33a6db0940a19b
   HHTransition: 7a3e1348fd111641138626c5529455e492d7e19f
   IBAnimatable: 99dddd4c0625884a301ba3ecbc1615f8a390368e
   IGListKit: b826c68ef7a4ae1626c09d4d3e1ea7a169e6c36e
@@ -607,6 +603,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYGCDTimer: 12629306940bd8edc456568478213a9f21abfe2d
 
-PODFILE CHECKSUM: ad61ed25ddfe1a40339e4cac96d47346480357fb
+PODFILE CHECKSUM: 3fc4d9665de0a41153eb7ff4ab694ea4821e25e9
 
 COCOAPODS: 1.11.3

@@ -166,7 +166,7 @@ def commonlyUsed
   #  swift 教学 https://github.com/YvanLiu/SwiftDemo.git
   #  LLDynamicLaunchScreen https://www.jianshu.com/p/d8d2145c6333
   #  https://github.com/cyq1162/Sagit
-  pod 'HHTimeProfiler'
+#  pod 'HHTimeProfiler'
   pod 'PGDatePicker',:git => 'https://github.com/xiaozhuxiong121/PGDatePicker.git',:inhibit_warnings =>true
   pod 'CLImageEditor'
   pod 'SDCycleScrollView',:inhibit_warnings =>true

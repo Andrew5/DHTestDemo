@@ -39,6 +39,13 @@
 		38196B992938FFAE00C8C66B /* UIWebView+Gray.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196B942938FFAE00C8C66B /* UIWebView+Gray.m */; };
 		38196C19293CE99000C8C66B /* DHTJumpControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C18293CE99000C8C66B /* DHTJumpControllerTool.m */; };
 		38196C23293DE3F600C8C66B /* UIButton+ParamObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C22293DE3F600C8C66B /* UIButton+ParamObject.m */; };
+		38196C3F2943D09900C8C66B /* AspectProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C3E2943D09900C8C66B /* AspectProxy.m */; };
+		38196C422943D0CC00C8C66B /* NSObject+Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C412943D0CC00C8C66B /* NSObject+Aspects.m */; };
+		38196C452943E67400C8C66B /* AttackStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C442943E67400C8C66B /* AttackStrategy.m */; };
+		38196C482943E6A500C8C66B /* SwordStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C472943E6A500C8C66B /* SwordStrategy.m */; };
+		38196C4B2943E6B500C8C66B /* FistStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C4A2943E6B500C8C66B /* FistStrategy.m */; };
+		38196C4E2943E6BF00C8C66B /* GunStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C4D2943E6BF00C8C66B /* GunStrategy.m */; };
+		38196C512943E6F600C8C66B /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196C502943E6F600C8C66B /* Character.m */; };
 		3823B02728F06958005E173A /* DHJiugonggeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3823B02628F06958005E173A /* DHJiugonggeView.m */; };
 		3823B02B28F069CF005E173A /* DHJiugonggeLoadPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3823B02A28F069CF005E173A /* DHJiugonggeLoadPhoto.m */; };
 		382F572828F092AF00C80599 /* YDYSalesRecordDetailInfoListInfoItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 382F572728F092AF00C80599 /* YDYSalesRecordDetailInfoListInfoItemCell.m */; };
@@ -47,17 +54,6 @@
 		38531AF728FE7A00004194D1 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38531AF628FE7A00004194D1 /* Tool.m */; };
 		38531AFA29012685004194D1 /* JKCicularProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 38531AF929012685004194D1 /* JKCicularProgressBar.m */; };
 		38668EBA28E5E76600925F77 /* CButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38668EB928E5E76600925F77 /* CButton.swift */; };
-		3867E7CF291EB3A700CD1BCD /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386D7425290AF6F7009FCF21 /* WidgetKit.framework */; };
-		3867E7D0291EB3A700CD1BCD /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386D7427290AF6F7009FCF21 /* SwiftUI.framework */; };
-		3867E7D3291EB3A700CD1BCD /* ClockBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867E7D2291EB3A700CD1BCD /* ClockBundle.swift */; };
-		3867E7D5291EB3A700CD1BCD /* ClockLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867E7D4291EB3A700CD1BCD /* ClockLiveActivity.swift */; };
-		3867E7D7291EB3A700CD1BCD /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867E7D6291EB3A700CD1BCD /* Clock.swift */; };
-		3867E7DA291EB3A900CD1BCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3867E7D9291EB3A900CD1BCD /* Assets.xcassets */; };
-		3867E7DC291EB3A900CD1BCD /* Clock.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3867E7D8291EB3A700CD1BCD /* Clock.intentdefinition */; };
-		3867E7DD291EB3A900CD1BCD /* Clock.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3867E7D8291EB3A700CD1BCD /* Clock.intentdefinition */; };
-		3867E7E0291EB3A900CD1BCD /* ClockExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3867E7CE291EB3A600CD1BCD /* ClockExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3867E7E5291EB50A00CD1BCD /* CYWidgetCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867E7E4291EB50A00CD1BCD /* CYWidgetCalendarView.swift */; };
-		3867E7E6291EB50A00CD1BCD /* CYWidgetCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867E7E4291EB50A00CD1BCD /* CYWidgetCalendarView.swift */; };
 		386CCE5729129F1D005A8359 /* FullRecommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386CCE5629129F1D005A8359 /* FullRecommandViewController.m */; };
 		386CCE5A29129F75005A8359 /* FullPersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386CCE5929129F75005A8359 /* FullPersonCenterViewController.m */; };
 		386CCE5D2912B50A005A8359 /* FullTavleviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386CCE5C2912B50A005A8359 /* FullTavleviewViewController.m */; };
@@ -301,6 +297,10 @@
 		38E140F728B8E6E8007A71FF /* QDExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E140F228B8E6E8007A71FF /* QDExceptionHandler.m */; };
 		38E140F828B8E6E8007A71FF /* CHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E140F328B8E6E8007A71FF /* CHLogger.m */; };
 		38E140F928B8E6E8007A71FF /* QDExceptionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E140F528B8E6E8007A71FF /* QDExceptionTool.m */; };
+		38E7351B294657B100717B8E /* JYBLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E73516294657B100717B8E /* JYBLoading.m */; };
+		38E7351C294657B100717B8E /* JYBLoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E73518294657B100717B8E /* JYBLoadingIndicator.m */; };
+		38E7351D294657B100717B8E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E7351A294657B100717B8E /* MBProgressHUD.m */; };
+		38E735212946597400717B8E /* JYBStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E735202946597400717B8E /* JYBStringHelper.m */; };
 		38F825A829114EFD00FBE373 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F825A529114EFD00FBE373 /* YYFPSLabel.m */; };
 		38F825A929114EFD00FBE373 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F825A729114EFD00FBE373 /* YYWeakProxy.m */; };
 		38FC53E528D36D64002FFCB1 /* TestAControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FC53DC28D36D64002FFCB1 /* TestAControl.m */; };
@@ -310,13 +310,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3867E7DE291EB3A900CD1BCD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 38BE70C528B0DF4D00EAF7DF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3867E7CD291EB3A600CD1BCD;
-			remoteInfo = ClockExtension;
-		};
 		38C6F96728BDFFF200AC8B3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38BE70C528B0DF4D00EAF7DF /* Project object */;
@@ -340,7 +333,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				3867E7E0291EB3A900CD1BCD /* ClockExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +382,20 @@
 		38196C18293CE99000C8C66B /* DHTJumpControllerTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTJumpControllerTool.m; sourceTree = "<group>"; };
 		38196C21293DE3F600C8C66B /* UIButton+ParamObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ParamObject.h"; sourceTree = "<group>"; };
 		38196C22293DE3F600C8C66B /* UIButton+ParamObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ParamObject.m"; sourceTree = "<group>"; };
+		38196C3D2943D09900C8C66B /* AspectProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AspectProxy.h; sourceTree = "<group>"; };
+		38196C3E2943D09900C8C66B /* AspectProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AspectProxy.m; sourceTree = "<group>"; };
+		38196C402943D0CC00C8C66B /* NSObject+Aspects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Aspects.h"; sourceTree = "<group>"; };
+		38196C412943D0CC00C8C66B /* NSObject+Aspects.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Aspects.m"; sourceTree = "<group>"; };
+		38196C432943E67400C8C66B /* AttackStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttackStrategy.h; sourceTree = "<group>"; };
+		38196C442943E67400C8C66B /* AttackStrategy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttackStrategy.m; sourceTree = "<group>"; };
+		38196C462943E6A500C8C66B /* SwordStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwordStrategy.h; sourceTree = "<group>"; };
+		38196C472943E6A500C8C66B /* SwordStrategy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwordStrategy.m; sourceTree = "<group>"; };
+		38196C492943E6B500C8C66B /* FistStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FistStrategy.h; sourceTree = "<group>"; };
+		38196C4A2943E6B500C8C66B /* FistStrategy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FistStrategy.m; sourceTree = "<group>"; };
+		38196C4C2943E6BF00C8C66B /* GunStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GunStrategy.h; sourceTree = "<group>"; };
+		38196C4D2943E6BF00C8C66B /* GunStrategy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GunStrategy.m; sourceTree = "<group>"; };
+		38196C4F2943E6F600C8C66B /* Character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
+		38196C502943E6F600C8C66B /* Character.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
 		3823B02528F06958005E173A /* DHJiugonggeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHJiugonggeView.h; sourceTree = "<group>"; };
 		3823B02628F06958005E173A /* DHJiugonggeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHJiugonggeView.m; sourceTree = "<group>"; };
 		3823B02928F069CF005E173A /* DHJiugonggeLoadPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHJiugonggeLoadPhoto.h; sourceTree = "<group>"; };
@@ -405,14 +411,6 @@
 		38531AF829012684004194D1 /* JKCicularProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCicularProgressBar.h; sourceTree = "<group>"; };
 		38531AF929012685004194D1 /* JKCicularProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCicularProgressBar.m; sourceTree = "<group>"; };
 		38668EB928E5E76600925F77 /* CButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CButton.swift; sourceTree = "<group>"; };
-		3867E7CE291EB3A600CD1BCD /* ClockExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ClockExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		3867E7D2291EB3A700CD1BCD /* ClockBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockBundle.swift; sourceTree = "<group>"; };
-		3867E7D4291EB3A700CD1BCD /* ClockLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockLiveActivity.swift; sourceTree = "<group>"; };
-		3867E7D6291EB3A700CD1BCD /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
-		3867E7D8291EB3A700CD1BCD /* Clock.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Clock.intentdefinition; sourceTree = "<group>"; };
-		3867E7D9291EB3A900CD1BCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3867E7DB291EB3A900CD1BCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3867E7E4291EB50A00CD1BCD /* CYWidgetCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYWidgetCalendarView.swift; sourceTree = "<group>"; };
 		386CCE5529129F1D005A8359 /* FullRecommandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullRecommandViewController.h; sourceTree = "<group>"; };
 		386CCE5629129F1D005A8359 /* FullRecommandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullRecommandViewController.m; sourceTree = "<group>"; };
 		386CCE5829129F75005A8359 /* FullPersonCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullPersonCenterViewController.h; sourceTree = "<group>"; };
@@ -829,6 +827,15 @@
 		38E140F328B8E6E8007A71FF /* CHLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLogger.m; sourceTree = "<group>"; };
 		38E140F428B8E6E8007A71FF /* QDExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDExceptionHandler.h; sourceTree = "<group>"; };
 		38E140F528B8E6E8007A71FF /* QDExceptionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDExceptionTool.m; sourceTree = "<group>"; };
+		38E73515294657B100717B8E /* JYBLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBLoading.h; sourceTree = "<group>"; };
+		38E73516294657B100717B8E /* JYBLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBLoading.m; sourceTree = "<group>"; };
+		38E73517294657B100717B8E /* JYBLoadingIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBLoadingIndicator.h; sourceTree = "<group>"; };
+		38E73518294657B100717B8E /* JYBLoadingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBLoadingIndicator.m; sourceTree = "<group>"; };
+		38E73519294657B100717B8E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		38E7351A294657B100717B8E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		38E7351E2946588C00717B8E /* JYBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBMacros.h; sourceTree = "<group>"; };
+		38E7351F294658CD00717B8E /* JYBStringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBStringHelper.h; sourceTree = "<group>"; };
+		38E735202946597400717B8E /* JYBStringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBStringHelper.m; sourceTree = "<group>"; };
 		38F825A429114EFD00FBE373 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		38F825A529114EFD00FBE373 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		38F825A629114EFD00FBE373 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
@@ -846,15 +853,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3867E7CB291EB3A600CD1BCD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3867E7D0291EB3A700CD1BCD /* SwiftUI.framework in Frameworks */,
-				3867E7CF291EB3A700CD1BCD /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		38BE70CA28B0DF4D00EAF7DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -909,6 +907,27 @@
 			path = JumpRult;
 			sourceTree = "<group>";
 		};
+		38196C3C2943D08200C8C66B /* strategy */ = {
+			isa = PBXGroup;
+			children = (
+				38196C3D2943D09900C8C66B /* AspectProxy.h */,
+				38196C3E2943D09900C8C66B /* AspectProxy.m */,
+				38196C402943D0CC00C8C66B /* NSObject+Aspects.h */,
+				38196C412943D0CC00C8C66B /* NSObject+Aspects.m */,
+				38196C432943E67400C8C66B /* AttackStrategy.h */,
+				38196C442943E67400C8C66B /* AttackStrategy.m */,
+				38196C462943E6A500C8C66B /* SwordStrategy.h */,
+				38196C472943E6A500C8C66B /* SwordStrategy.m */,
+				38196C492943E6B500C8C66B /* FistStrategy.h */,
+				38196C4A2943E6B500C8C66B /* FistStrategy.m */,
+				38196C4C2943E6BF00C8C66B /* GunStrategy.h */,
+				38196C4D2943E6BF00C8C66B /* GunStrategy.m */,
+				38196C4F2943E6F600C8C66B /* Character.h */,
+				38196C502943E6F600C8C66B /* Character.m */,
+			);
+			path = strategy;
+			sourceTree = "<group>";
+		};
 		3823B02828F069A8005E173A /* Picker */ = {
 			isa = PBXGroup;
 			children = (
@@ -924,20 +943,6 @@
 				38DC6FC028E03ED4004AE8C7 /* YDYUIImagePickerControllerLoadPhoto.m */,
 			);
 			path = Picker;
-			sourceTree = "<group>";
-		};
-		3867E7D1291EB3A700CD1BCD /* Clock */ = {
-			isa = PBXGroup;
-			children = (
-				3867E7D2291EB3A700CD1BCD /* ClockBundle.swift */,
-				3867E7E4291EB50A00CD1BCD /* CYWidgetCalendarView.swift */,
-				3867E7D4291EB3A700CD1BCD /* ClockLiveActivity.swift */,
-				3867E7D6291EB3A700CD1BCD /* Clock.swift */,
-				3867E7D8291EB3A700CD1BCD /* Clock.intentdefinition */,
-				3867E7D9291EB3A900CD1BCD /* Assets.xcassets */,
-				3867E7DB291EB3A900CD1BCD /* Info.plist */,
-			);
-			path = Clock;
 			sourceTree = "<group>";
 		};
 		386926B028F3401C003A5C03 /* SwiftProject */ = {
@@ -1510,7 +1515,6 @@
 				38BE70CF28B0DF4D00EAF7DF /* testSingature_N */,
 				38C6F96228BDFFF200AC8B3A /* testSingature_NUITests */,
 				38C6F97128BDFFFD00AC8B3A /* testSingature_NTests */,
-				3867E7D1291EB3A700CD1BCD /* Clock */,
 				38BE70CE28B0DF4D00EAF7DF /* Products */,
 				0FB190302542698FFA9AFDE3 /* Pods */,
 				67C6174A941F768FA9E0B3F6 /* Frameworks */,
@@ -1523,7 +1527,6 @@
 				38BE70CD28B0DF4D00EAF7DF /* testSingature_N.app */,
 				38C6F96128BDFFF200AC8B3A /* testSingature_NUITests.xctest */,
 				38C6F97028BDFFFD00AC8B3A /* testSingature_NTests.xctest */,
-				3867E7CE291EB3A600CD1BCD /* ClockExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1531,6 +1534,7 @@
 		38BE70CF28B0DF4D00EAF7DF /* testSingature_N */ = {
 			isa = PBXGroup;
 			children = (
+				38196C3C2943D08200C8C66B /* strategy */,
 				38A5CDC9291016460050701A /* HorizontalTableView */,
 				3884FC9028FB20F100B5B98B /* NSNotificationCenter */,
 				386926B028F3401C003A5C03 /* SwiftProject */,
@@ -1805,6 +1809,7 @@
 				38BE70ED28B2381300EAF7DF /* AlertView */,
 				38DC6F9428E0282A004AE8C7 /* AutoCellTableViewCell.h */,
 				38DC6F9528E0282A004AE8C7 /* AutoCellTableViewCell.m */,
+				38E73514294657B100717B8E /* MBProgressHUD */,
 				387D796528CB90BB0072C841 /* BNMarketModulesView.h */,
 				387D796428CB90BB0072C841 /* BNMarketModulesView.m */,
 				38F825A329114EFD00FBE373 /* YYFPSLabel */,
@@ -1937,6 +1942,22 @@
 			path = UncaughtException;
 			sourceTree = "<group>";
 		};
+		38E73514294657B100717B8E /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				38E73515294657B100717B8E /* JYBLoading.h */,
+				38E73516294657B100717B8E /* JYBLoading.m */,
+				38E7351F294658CD00717B8E /* JYBStringHelper.h */,
+				38E735202946597400717B8E /* JYBStringHelper.m */,
+				38E7351E2946588C00717B8E /* JYBMacros.h */,
+				38E73517294657B100717B8E /* JYBLoadingIndicator.h */,
+				38E73518294657B100717B8E /* JYBLoadingIndicator.m */,
+				38E73519294657B100717B8E /* MBProgressHUD.h */,
+				38E7351A294657B100717B8E /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		38F825A329114EFD00FBE373 /* YYFPSLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1992,23 +2013,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3867E7CD291EB3A600CD1BCD /* ClockExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3867E7E3291EB3A900CD1BCD /* Build configuration list for PBXNativeTarget "ClockExtension" */;
-			buildPhases = (
-				3867E7CA291EB3A600CD1BCD /* Sources */,
-				3867E7CB291EB3A600CD1BCD /* Frameworks */,
-				3867E7CC291EB3A600CD1BCD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ClockExtension;
-			productName = ClockExtension;
-			productReference = 3867E7CE291EB3A600CD1BCD /* ClockExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		38BE70CC28B0DF4D00EAF7DF /* testSingature_N */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38BE70E628B0DF5300EAF7DF /* Build configuration list for PBXNativeTarget "testSingature_N" */;
@@ -2024,7 +2028,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				3867E7DF291EB3A900CD1BCD /* PBXTargetDependency */,
 			);
 			name = testSingature_N;
 			productName = testSingature_N;
@@ -2077,9 +2080,6 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					3867E7CD291EB3A600CD1BCD = {
-						CreatedOnToolsVersion = 14.1;
-					};
 					38BE70CC28B0DF4D00EAF7DF = {
 						CreatedOnToolsVersion = 13.4.1;
 						LastSwiftMigration = 1340;
@@ -2110,20 +2110,11 @@
 				38BE70CC28B0DF4D00EAF7DF /* testSingature_N */,
 				38C6F96028BDFFF200AC8B3A /* testSingature_NUITests */,
 				38C6F96F28BDFFFD00AC8B3A /* testSingature_NTests */,
-				3867E7CD291EB3A600CD1BCD /* ClockExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3867E7CC291EB3A600CD1BCD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3867E7DA291EB3A900CD1BCD /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		38BE70CB28B0DF4D00EAF7DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2278,18 +2269,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3867E7CA291EB3A600CD1BCD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3867E7D7291EB3A700CD1BCD /* Clock.swift in Sources */,
-				3867E7D3291EB3A700CD1BCD /* ClockBundle.swift in Sources */,
-				3867E7D5291EB3A700CD1BCD /* ClockLiveActivity.swift in Sources */,
-				3867E7DC291EB3A900CD1BCD /* Clock.intentdefinition in Sources */,
-				3867E7E6291EB50A00CD1BCD /* CYWidgetCalendarView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		38BE70C928B0DF4D00EAF7DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2337,6 +2316,7 @@
 				3823B02728F06958005E173A /* DHJiugonggeView.m in Sources */,
 				380C0B2728FC22EB00C9A8A9 /* SwiftBaseClass.swift in Sources */,
 				38791F9F28F7012100155136 /* JDBMAddressSwitch.m in Sources */,
+				38196C422943D0CC00C8C66B /* NSObject+Aspects.m in Sources */,
 				38BBD90C2908AD6A0047EAEE /* SlideMenuViewController.m in Sources */,
 				387D79B328CB9DA30072C841 /* NSDate+HDExtension.m in Sources */,
 				38E140CF28B5ED7F007A71FF /* DHCustomAlertView.m in Sources */,
@@ -2347,6 +2327,7 @@
 				380C0B2628FC22EB00C9A8A9 /* MySeconfSwift.swift in Sources */,
 				38DC6FBE28E03CF5004AE8C7 /* CustomLabel.m in Sources */,
 				387D79B628CB9DA30072C841 /* DHMonthListViewController.m in Sources */,
+				38196C512943E6F600C8C66B /* Character.m in Sources */,
 				3877945C28C59F1C00790637 /* StringExtension.swift in Sources */,
 				38C6F95A28BDFD9700AC8B3A /* OneCell.swift in Sources */,
 				38DBF26C28C9F7BA00447874 /* ObjectManageer.swift in Sources */,
@@ -2381,11 +2362,14 @@
 				380C0B1E28FC22EB00C9A8A9 /* MyFristCustomSwiftCell.swift in Sources */,
 				38A5CD5A290EA1920050701A /* GraphDataObject.m in Sources */,
 				380E5D822908696E000280D9 /* UICalViewController.m in Sources */,
+				38196C482943E6A500C8C66B /* SwordStrategy.m in Sources */,
 				382F572B28F0998700C80599 /* YDYClaimGoalCustomerRequestInfoManageVCViewController.m in Sources */,
 				387D796028CB8FFA0072C841 /* BLStopwatch.m in Sources */,
 				38A5CD5C290EA1920050701A /* GraphPoint.m in Sources */,
 				38A5CDD22910168E0050701A /* HorizontalTableViewController.m in Sources */,
 				38BBD9092908AC030047EAEE /* JYRadarChartViewController.m in Sources */,
+				38196C3F2943D09900C8C66B /* AspectProxy.m in Sources */,
+				38196C452943E67400C8C66B /* AttackStrategy.m in Sources */,
 				38A5CD7F290EDCCD0050701A /* FullUserGuideViewController.m in Sources */,
 				38C6F98928BE202800AC8B3A /* DHBridgeViewController.m in Sources */,
 				3877945928C59F1C00790637 /* LYAlertView.swift in Sources */,
@@ -2400,12 +2384,15 @@
 				38C311282938965200D8FC2B /* UIImage+GrayImage.m in Sources */,
 				386CCE632912BA5D005A8359 /* TitleScrollView.m in Sources */,
 				38C311292938965200D8FC2B /* UIImageView+GrayImageview.m in Sources */,
+				38E7351D294657B100717B8E /* MBProgressHUD.m in Sources */,
 				38BA47CA2908A0D100F611CD /* FlipDetailViewController.m in Sources */,
 				38FC53E728D36D64002FFCB1 /* TestAViewController.m in Sources */,
 				38BE70D528B0DF4D00EAF7DF /* SceneDelegate.m in Sources */,
+				38196C4B2943E6B500C8C66B /* FistStrategy.m in Sources */,
 				3877945428C59F1C00790637 /* LYAlertFactoryProtocol.swift in Sources */,
 				38A5CD82290EDCE90050701A /* FullRootTabbarController.m in Sources */,
 				38BBD9062908A9F20047EAEE /* AppStoreStyleTableViewCell.m in Sources */,
+				38E735212946597400717B8E /* JYBStringHelper.m in Sources */,
 				380C0B2428FC22EB00C9A8A9 /* SwiftTestClass.swift in Sources */,
 				38C90BB529102F87007539EC /* ChineseSortingViewController.m in Sources */,
 				387D794828CB8A500072C841 /* GMSignature.m in Sources */,
@@ -2424,6 +2411,7 @@
 				3877945628C59F1C00790637 /* LYLineView.swift in Sources */,
 				380C0B2528FC22EB00C9A8A9 /* Common.swift in Sources */,
 				387D79B028CB9DA30072C841 /* HDCollectionMonthDetailHeaderView.m in Sources */,
+				38E7351B294657B100717B8E /* JYBLoading.m in Sources */,
 				38DBF26A28C9F0EE00447874 /* CustomerProtocol.swift in Sources */,
 				38BBD9202908ADAC0047EAEE /* MenuViewController.m in Sources */,
 				38A5CD76290ED2B20050701A /* FullHomeViewController.m in Sources */,
@@ -2434,7 +2422,6 @@
 				38A005F828FACA360045DB7B /* NSObject+KVOBlock.m in Sources */,
 				38BA47B029089C1B00F611CD /* UIColor+colorWithHex.m in Sources */,
 				38A005EE28FAC28E0045DB7B /* GradientView.m in Sources */,
-				3867E7DD291EB3A900CD1BCD /* Clock.intentdefinition in Sources */,
 				38A5CD5B290EA1920050701A /* GraphLine.m in Sources */,
 				38FC53E628D36D64002FFCB1 /* TestBViewController.m in Sources */,
 				38C3112D2938965200D8FC2B /* UITabBarItem+LhGray.m in Sources */,
@@ -2456,13 +2443,14 @@
 				380C0B1F28FC22EB00C9A8A9 /* ExplosionAnimationProtocol.swift in Sources */,
 				38DC6FB728E03C42004AE8C7 /* CircleView.m in Sources */,
 				387D79B128CB9DA30072C841 /* DHMonthListTableViewCell.m in Sources */,
+				38E7351C294657B100717B8E /* JYBLoadingIndicator.m in Sources */,
 				38F825A829114EFD00FBE373 /* YYFPSLabel.m in Sources */,
 				387D794228CB60C10072C841 /* DHNetworkSpeed.m in Sources */,
 				38BA47CC2908A0D100F611CD /* FlipViewController.m in Sources */,
+				38196C4E2943E6BF00C8C66B /* GunStrategy.m in Sources */,
 				38E140F828B8E6E8007A71FF /* CHLogger.m in Sources */,
 				385153C729087477003F25A9 /* UITableViewCell+CellShadows.m in Sources */,
 				38BBD91E2908ADAC0047EAEE /* FriendsViewController.m in Sources */,
-				3867E7E5291EB50A00CD1BCD /* CYWidgetCalendarView.swift in Sources */,
 				3884FC9628FB210100B5B98B /* KSViewController.m in Sources */,
 				38E140F928B8E6E8007A71FF /* QDExceptionTool.m in Sources */,
 				38C311262938965200D8FC2B /* UIButton+LhGray.m in Sources */,
@@ -2533,11 +2521,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3867E7DF291EB3A900CD1BCD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3867E7CD291EB3A600CD1BCD /* ClockExtension */;
-			targetProxy = 3867E7DE291EB3A900CD1BCD /* PBXContainerItemProxy */;
-		};
 		38C6F96828BDFFF200AC8B3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 38BE70CC28B0DF4D00EAF7DF /* testSingature_N */;
@@ -2570,67 +2553,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3867E7E1291EB3A900CD1BCD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 74W795UZRB;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Clock/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Clock;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "NMB.testSingature-N.Clock";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		3867E7E2291EB3A900CD1BCD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 74W795UZRB;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Clock/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Clock;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "NMB.testSingature-N.Clock";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		38BE70E428B0DF5300EAF7DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2681,7 +2603,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2733,7 +2655,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2747,7 +2669,6 @@
 			baseConfigurationReference = 468DB65966A8E484DB1CA058 /* Pods-testSingature_N.debug.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2800,7 +2721,6 @@
 			baseConfigurationReference = 09FA0C6D104EAF743E4F57DC /* Pods-testSingature_N.release.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2916,15 +2836,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3867E7E3291EB3A900CD1BCD /* Build configuration list for PBXNativeTarget "ClockExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3867E7E1291EB3A900CD1BCD /* Debug */,
-				3867E7E2291EB3A900CD1BCD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		38BE70C828B0DF4D00EAF7DF /* Build configuration list for PBXProject "testSingature_N" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

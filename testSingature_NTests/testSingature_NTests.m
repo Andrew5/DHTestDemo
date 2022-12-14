@@ -6,19 +6,24 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ViewController.h"
 
 @interface testSingature_NTests : XCTestCase
-
+@property (strong, nonatomic)ViewController *vc;
 @end
 
 @implementation testSingature_NTests
 
 - (void)setUp {
+    self.vc = [[ViewController alloc]init];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
+    self.vc = nil;
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    // 每次测试完成后，都会调用tearDown实例方法。重写此方法以执行每个测试的清除。
+
 }
 
 - (void)testExample {
@@ -28,9 +33,37 @@
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+    // 性能
+//    [self measureBlock:^{
+//        // Put the code you want to measure the time of here.
+//    }];
+    
+//    // give--错误输出内容
+//    XCTestExpectation *exc = [self expectationWithDescription:@"这是我的期望"];
+//    // when
+//    void(^infoBlock)(NSString *dic) = ^(NSString * infor){
+//        XCTAssertNotNil(infor,@"返回o空了");
+//        [exc fulfill];
+//        NSLog(@"%@",infor);
+//        infor = @"工程师";
+//        NSLog(@"%@",infor);
+//    };
+//    [self.vc loadManyDatas:infoBlock];
+//    //then
+//    [self waitForExpectationsWithTimeout:2 handler:^(NSError * _Nullable error) {
+//        NSLog(@"你快回来");
+//    }];
+//
+
+    
+    // 内存 时间 耗电量 流量 发热量
+//    [self measureMetrics:@[XCTPerformanceMetric_WallClockTime] automaticallyStartMeasuring:NO forBlock:^{
+//        [self.vc loadManyDatas];
+//        [self startMeasuring];
+//        // Do that thing you want to measure.
+//        [self.vc loadManyDatas];
+//        [self stopMeasuring];
+//    }];
 }
 /*
  XCTFail(format…) 生成一个失败的测试；
