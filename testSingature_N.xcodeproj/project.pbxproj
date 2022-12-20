@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		37FCF2B185808E9AAE5D8E84 /* Pods_testSingature_N.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E081B817C2EC725DE4A1C046 /* Pods_testSingature_N.framework */; };
+		380A07FC29518F6200AAD1FE /* TestImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 380A07FB29518F6200AAD1FE /* TestImage.png */; };
+		380A07FE2951951D00AAD1FE /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 380A07FD2951951D00AAD1FE /* arrow.png */; };
 		380C0B0528FC1CC100C9A8A9 /* DHTouchVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 380C0B0428FC1CC100C9A8A9 /* DHTouchVIew.m */; };
 		380C0B1B28FC22EB00C9A8A9 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C0B0A28FC22D200C9A8A9 /* UIViewExtension.swift */; };
 		380C0B1C28FC22EB00C9A8A9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C0B0B28FC22D400C9A8A9 /* Person.swift */; };
@@ -32,6 +34,7 @@
 		380E5D822908696E000280D9 /* UICalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380E5D802908696E000280D9 /* UICalViewController.m */; };
 		380E5D832908696E000280D9 /* UICalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380E5D812908696E000280D9 /* UICalViewController.xib */; };
 		380E5D85290869C0000280D9 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 380E5D84290869C0000280D9 /* sample.png */; };
+		3815E9B5294C983A0010EE5E /* BackgroundTimerService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3815E9B3294C983A0010EE5E /* BackgroundTimerService.m */; };
 		38196B952938FFAE00C8C66B /* WKWebView+Gray.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196B8E2938FFAD00C8C66B /* WKWebView+Gray.m */; };
 		38196B962938FFAE00C8C66B /* UIImageView+GrayImageview.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196B8F2938FFAD00C8C66B /* UIImageView+GrayImageview.m */; };
 		38196B972938FFAE00C8C66B /* UIImage+GrayImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 38196B912938FFAD00C8C66B /* UIImage+GrayImage.m */; };
@@ -76,6 +79,7 @@
 		3877946128C59FD000790637 /* DHCustomerAlertViewListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877946028C59FD000790637 /* DHCustomerAlertViewListController.swift */; };
 		38791F9F28F7012100155136 /* JDBMAddressSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 38791F9D28F7011F00155136 /* JDBMAddressSwitch.m */; };
 		38791FA228F7085200155136 /* recFifCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38791FA128F7085200155136 /* recFifCell.m */; };
+		3879220C294C6DA900FBC680 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3879220B294C6DA900FBC680 /* NotificationService.m */; };
 		387D794228CB60C10072C841 /* DHNetworkSpeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 387D794128CB60C10072C841 /* DHNetworkSpeed.m */; };
 		387D794528CB825A0072C841 /* DHTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 387D794428CB825A0072C841 /* DHTransitionManager.m */; };
 		387D794828CB8A500072C841 /* GMSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 387D794728CB8A500072C841 /* GMSignature.m */; };
@@ -341,6 +345,8 @@
 
 /* Begin PBXFileReference section */
 		09FA0C6D104EAF743E4F57DC /* Pods-testSingature_N.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSingature_N.release.xcconfig"; path = "Target Support Files/Pods-testSingature_N/Pods-testSingature_N.release.xcconfig"; sourceTree = "<group>"; };
+		380A07FB29518F6200AAD1FE /* TestImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage.png; sourceTree = "<group>"; };
+		380A07FD2951951D00AAD1FE /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		380C0B0328FC1CBF00C9A8A9 /* DHTouchVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTouchVIew.h; sourceTree = "<group>"; };
 		380C0B0428FC1CC100C9A8A9 /* DHTouchVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTouchVIew.m; sourceTree = "<group>"; };
 		380C0B0A28FC22D200C9A8A9 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -368,6 +374,8 @@
 		380E5D802908696E000280D9 /* UICalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICalViewController.m; sourceTree = "<group>"; };
 		380E5D812908696E000280D9 /* UICalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UICalViewController.xib; sourceTree = "<group>"; };
 		380E5D84290869C0000280D9 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		3815E9B3294C983A0010EE5E /* BackgroundTimerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundTimerService.m; sourceTree = "<group>"; };
+		3815E9B4294C983A0010EE5E /* BackgroundTimerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundTimerService.h; sourceTree = "<group>"; };
 		38196B8B2938FFAC00C8C66B /* UIColor+GrayColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GrayColor.h"; sourceTree = "<group>"; };
 		38196B8C2938FFAD00C8C66B /* WKWebView+Gray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+Gray.h"; sourceTree = "<group>"; };
 		38196B8D2938FFAD00C8C66B /* UIWebView+Gray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Gray.h"; sourceTree = "<group>"; };
@@ -443,6 +451,8 @@
 		38791F9E28F7012100155136 /* JDBMAddressSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDBMAddressSwitch.h; sourceTree = "<group>"; };
 		38791FA028F7085000155136 /* recFifCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recFifCell.h; sourceTree = "<group>"; };
 		38791FA128F7085200155136 /* recFifCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recFifCell.m; sourceTree = "<group>"; };
+		3879220A294C6DA800FBC680 /* NotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		3879220B294C6DA900FBC680 /* NotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
 		387D794028CB60C10072C841 /* DHNetworkSpeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHNetworkSpeed.h; sourceTree = "<group>"; };
 		387D794128CB60C10072C841 /* DHNetworkSpeed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHNetworkSpeed.m; sourceTree = "<group>"; };
 		387D794328CB825A0072C841 /* DHTransitionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTransitionManager.h; sourceTree = "<group>"; };
@@ -994,6 +1004,17 @@
 				3877946028C59FD000790637 /* DHCustomerAlertViewListController.swift */,
 			);
 			path = LYAlertView;
+			sourceTree = "<group>";
+		};
+		38792209294C6D9D00FBC680 /* MLSOAppDelegate用法 */ = {
+			isa = PBXGroup;
+			children = (
+				3879220A294C6DA800FBC680 /* NotificationService.h */,
+				3879220B294C6DA900FBC680 /* NotificationService.m */,
+				3815E9B4294C983A0010EE5E /* BackgroundTimerService.h */,
+				3815E9B3294C983A0010EE5E /* BackgroundTimerService.m */,
+			);
+			path = "MLSOAppDelegate用法";
 			sourceTree = "<group>";
 		};
 		387D794928CB8D290072C841 /* Adapter */ = {
@@ -1548,7 +1569,9 @@
 				38BE70D428B0DF4D00EAF7DF /* SceneDelegate.m */,
 				38BE70D628B0DF4D00EAF7DF /* ViewController.h */,
 				38BE70D728B0DF4D00EAF7DF /* ViewController.m */,
+				380A07FD2951951D00AAD1FE /* arrow.png */,
 				38AE284F291251B4009DCC99 /* base64.txt */,
+				380A07FB29518F6200AAD1FE /* TestImage.png */,
 				38C3111129366E2000D8FC2B /* slider-metal-trackBackground12.png */,
 				380E5D7B29085B31000280D9 /* ViewControllerDelegate.h */,
 				387D798928CB9DA30072C841 /* ListLinkage */,
@@ -1613,6 +1636,7 @@
 		38BE70F828B248D000EAF7DF /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
+				38792209294C6D9D00FBC680 /* MLSOAppDelegate用法 */,
 				38C90BA329102EB7007539EC /* ZEDSoundTool */,
 				38BA47B429089E6800F611CD /* SampleManager.h */,
 				38BA47B129089E6300F611CD /* SampleManager.m */,
@@ -2138,6 +2162,7 @@
 				38A5CD9F290EE2A30050701A /* guidePage3-568h@2x.png in Resources */,
 				380C0B3128FC232100C9A8A9 /* personalNewPage.plist in Resources */,
 				38A5CD55290EA1920050701A /* history_graph_2_label@2x.png in Resources */,
+				380A07FC29518F6200AAD1FE /* TestImage.png in Resources */,
 				38A5CD4B290EA1920050701A /* history_graph_-1_label@2x.png in Resources */,
 				3884FC8128FB1C9C00B5B98B /* 3.jpg in Resources */,
 				38BA479D29088FB000F611CD /* giraffe.png in Resources */,
@@ -2175,6 +2200,7 @@
 				3884FC7F28FB1C9C00B5B98B /* 1.jpg in Resources */,
 				38A5CD59290EA1920050701A /* history_graph_background@2x.png in Resources */,
 				38BE710128B248FC00EAF7DF /* start.png in Resources */,
+				380A07FE2951951D00AAD1FE /* arrow.png in Resources */,
 				38A5CD9D290EE2A30050701A /* guidePage1-568h@2x.png in Resources */,
 				38C90BA829102EB7007539EC /* ring.caf in Resources */,
 				38A5CDA1290EE2A30050701A /* guidePage2@2x.png in Resources */,
@@ -2360,6 +2386,7 @@
 				387D798828CB9D2D0072C841 /* JhPrivacyAuthTool.m in Sources */,
 				38BA47B629089E6800F611CD /* SampleStudent.m in Sources */,
 				380C0B1E28FC22EB00C9A8A9 /* MyFristCustomSwiftCell.swift in Sources */,
+				3815E9B5294C983A0010EE5E /* BackgroundTimerService.m in Sources */,
 				38A5CD5A290EA1920050701A /* GraphDataObject.m in Sources */,
 				380E5D822908696E000280D9 /* UICalViewController.m in Sources */,
 				38196C482943E6A500C8C66B /* SwordStrategy.m in Sources */,
@@ -2489,6 +2516,7 @@
 				387D795528CB8D290072C841 /* AdapteeObject.m in Sources */,
 				38DC6F9628E0282A004AE8C7 /* AutoCellTableViewCell.m in Sources */,
 				3877945F28C59F1C00790637 /* LYAlertBuilder.swift in Sources */,
+				3879220C294C6DA900FBC680 /* NotificationService.m in Sources */,
 				3884FCAF28FBFF0000B5B98B /* CZPickerView.m in Sources */,
 				380C0B1C28FC22EB00C9A8A9 /* Person.swift in Sources */,
 				38BA47C92908A0D100F611CD /* AddNewNoteViewController.m in Sources */,
@@ -2695,7 +2723,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2747,7 +2775,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

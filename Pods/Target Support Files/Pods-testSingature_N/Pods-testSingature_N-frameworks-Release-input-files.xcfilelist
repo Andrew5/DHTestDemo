@@ -40,6 +40,7 @@ ${BUILT_PRODUCTS_DIR}/LearnRAC/LearnRAC.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework
 ${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework
+${BUILT_PRODUCTS_DIR}/MLSOAppDelegate/MLSOAppDelegate.framework
 ${BUILT_PRODUCTS_DIR}/MVPGrowthModel/MVPGrowthModel.framework
 ${BUILT_PRODUCTS_DIR}/MVVMTableViewDemo/MVVMTableViewDemo.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework

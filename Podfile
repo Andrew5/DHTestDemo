@@ -34,6 +34,7 @@ def shared_pods
   pod 'RHScan',           :path => '../RHScan'
   pod 'QRCode',           :path => '../QRCode'
   pod 'VTAntiScreenCapture',:path => '../VTAntiScreenCapture'
+  pod "MLSOAppDelegate", :path => "../MLSOAppDelegate"
   
 end
 def swift_pods
@@ -154,6 +155,7 @@ def commonlyUsed
   pod 'PopMenu',:inhibit_warnings =>true                       #PopMenu 是受新浪微博/网易应用启发的弹出动画菜单。
   pod 'pop'                           #facebook开源的一套动画，有卡片动画效果，类似陌陌首页发现动画
   pod 'IBAnimatable'                  #使用 IBAnimatable 在 Interface Builder 中为 App Store 就绪的应用程序设计和原型定制 UI、交互、导航、过渡和动画。
+  # https://github.com/dev-liyang/LYCustomTransition #iOS自定义交互式转场动画-仿微信图片浏览器转场动画、仿ios系统相册图片浏览转场动画、仿酷狗转场动画 + 交互式图片浏览器
   #  popping                             #动画集 ->https://github.com/schneiderandre/popping
   #  ShareOfCoreAnimation                #一些基础动画 -> https://github.com/rjinxx/ShareOfCoreAnimation
   #  pod 'iOSAnimation',:git  => 'https://github.com/opooc/iOSAnimation.git'

@@ -123,6 +123,7 @@ PODS:
   - MBProgressHUD (1.2.0)
   - MGJRouter (0.8.0)
   - MJExtension (3.4.1)
+  - MLSOAppDelegate (0.0.1)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
@@ -327,6 +328,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MGJRouter (from `https://github.com/lyujunwei/MGJRouter.git`)
   - MJExtension
+  - MLSOAppDelegate (from `../MLSOAppDelegate`)
   - Moya
   - MultithreadingKnowledge (from `../MultithreadingKnowledge`)
   - MVPGrowthModel (from `../MVPGrowthModel`)
@@ -471,6 +473,8 @@ EXTERNAL SOURCES:
     :path: "../LearnRAC"
   MGJRouter:
     :git: https://github.com/lyujunwei/MGJRouter.git
+  MLSOAppDelegate:
+    :path: "../MLSOAppDelegate"
   MultithreadingKnowledge:
     :path: "../MultithreadingKnowledge"
   MVPGrowthModel:
@@ -557,6 +561,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGJRouter: d8bc21beb8cc8567491854d8a4b7533d95889e22
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
+  MLSOAppDelegate: 3266716453d43b83b85b85ff58e2d7489fc74bbc
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   MultithreadingKnowledge: c9da89038f047e54e2d731849809e6ce3177eace
   MVPGrowthModel: 3c6eb96c85b4e80540dc60c9ee6732db271ebd9c
@@ -603,6 +608,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYGCDTimer: 12629306940bd8edc456568478213a9f21abfe2d
 
-PODFILE CHECKSUM: 3fc4d9665de0a41153eb7ff4ab694ea4821e25e9
+PODFILE CHECKSUM: 47e97243493e31de4e0103cd93b8e9494b3c145f
 
 COCOAPODS: 1.11.3

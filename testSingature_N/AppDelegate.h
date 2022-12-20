@@ -6,9 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//#import <MLSOAppDelegate/MLSOAppDelegate.h>
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+//@interface AppDelegate : MLSOAppDelegate
 @property (strong, nonatomic)UIWindow * window;
 
 @end
