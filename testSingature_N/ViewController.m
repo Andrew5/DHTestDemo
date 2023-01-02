@@ -30,19 +30,7 @@
 #include <sys/socket.h>
 #include <sys/sysctl.h>
 
-#import "ViewController.h"
-
 #import "testSingature_N-Swift.h"
-
-#import "DHTool.h"
-
-#import "Masonry.h"
-
-//#import "UIColor+JFColor.h"
-#import "UIView+UIScreenDisplaying.h"
-#import "NSAttributedString+YYText.h"
-//#import "CategoryRelyon/UIView+Extension.h"
-#import "NSDate+LYDate.h"
 
 #import <DHTabBar/LZTabBarVC.h>
 #import <YYKit/YYLabel.h>
@@ -57,7 +45,11 @@
 #import "UIColor+LhGray.h"
 #import "DHTJumpControllerTool.h"
 #import "UIButton+ParamObject.h"
+#import "UIView+UIScreenDisplaying.h"
+#import "NSAttributedString+YYText.h"
+#import "NSDate+LYDate.h"
 
+#import "ViewController.h"
 #import "DHCustomerAssertHandler.h"
 #import "DHCustomAlertView.h"
 #import "GLPageScrollView.h"
@@ -69,6 +61,8 @@
 #import "LGTeacher.h"
 #import "KSGuideManager.h"
 #import "DHButton.h"
+#import "DHTool.h"
+#import "Masonry.h"
 #import "TestAControl.h"
 #import "DHNetworkSpeed.h"
 #import "GeneralInterest.h"
@@ -103,6 +97,8 @@
 #import "FistStrategy.h"
 #import "GunStrategy.h"
 #import "JYBLoading.h"
+#import "PipViewController.h"
+
 // pod install --verbose --no-repo-update //只安装新添加的库，已更新的库忽略
 // pod update 类库名称 --verbose --no-repo-update // 只更新指定的库，其它库忽略
 
@@ -232,7 +228,7 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
     });
     
     //    [MasonryAutoViewController d_release];
-    [self test3];
+    [self test25];
     
     NSLog(@"属性 %@",KEY_PATH(self,alertViewCustom));
 }
@@ -787,6 +783,7 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
     } else {
         language = @"en";
     }
+    ///TODO: 策略模式
     // 创建一个人物
     Character *character = [[Character alloc] init];
     
@@ -954,6 +951,69 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
         });
     }
     NSLog(@"%d",num);
+    // 定义变量表示2023年有多少天双休日
+    int weekendDays = 0;
+
+    // 定义变量表示2023年每个月的天数
+    int daysInMonths[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    // 循环遍历每个月的天数
+    for (int i = 0; i < 12; i++) {
+        // 当前月的天数
+        int days = daysInMonths[i];
+        
+        // 循环遍历当前月的每一天
+        for (int j = 1; j <= days; j++) {
+            // 创建一个 NSCalendar 对象
+            NSCalendar *calendar = [NSCalendar currentCalendar];
+            
+            // 创建一个 NSDateComponents 对象，表示2023年的第 i+1 个月的第 j 天
+            NSDateComponents *components = [[NSDateComponents alloc] init];
+            components.year = 2023;
+            components.month = i + 1;
+            components.day = j;
+            
+            // 使用 NSCalendar 对象的 dateFromComponents: 方法创建一个 NSDate 对象
+            NSDate *date = [calendar dateFromComponents:components];
+            
+            // 使用 NSCalendar 对象的 component:fromDate: 方法获取 date 对应的星期几
+            NSInteger weekDay = [calendar component:NSCalendarUnitWeekday fromDate:date];
+            
+            // 当星期六或星期天时，双休日天数加1
+            if (weekDay == 7 || weekDay == 1) {
+                weekendDays++;
+            }
+        }
+    }
+
+    // 输出结果
+    NSLog(@"2023年一共有%d天双休日", weekendDays);
+    
+    
+    
+    // 首先定义一个数组，用来存储每月的天数
+    NSArray *daysPerMonth = @[@31, @28, @31, @30, @31, @30, @31, @31, @30, @31, @30, @31];
+
+    // 定义变量存储结果
+    int totalDaysOff = 0;
+
+    // 循环遍历数组，计算每个月有多少周五和周六
+    for (int i = 0; i < daysPerMonth.count; i++) {
+        int daysInMonth = [daysPerMonth[i] intValue];
+        // 计算当前月份第一个周五的日期
+        int firstFriday = 5 - [[NSCalendar currentCalendar] firstWeekday] + 1;
+        // 如果当前月份第一个周五是1号，说明上一个月的最后一天是周四，那么需要加上上一个月的最后一个周五和周六
+        if (firstFriday == 1) {
+            totalDaysOff += 2;
+        }
+        // 加上当前月份的周五和周六数量
+        totalDaysOff += (daysInMonth - firstFriday + 1) / 7 * 2;
+    }
+
+    // 输出结果
+    NSLog(@"Total days off in 2023: %d", totalDaysOff);
+
+
 }
 
 - (void)test20 {
@@ -1091,8 +1151,8 @@ static inline CGRect XWRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
 }
 
 - (void)test25 {
-    
-    YDYClaimGoalCustomerRequestInfoManageVCViewController *controller = YDYClaimGoalCustomerRequestInfoManageVCViewController.alloc.init;
+    PipViewController *controller = [[PipViewController alloc]init];
+//    YDYClaimGoalCustomerRequestInfoManageVCViewController *controller = YDYClaimGoalCustomerRequestInfoManageVCViewController.alloc.init;
     [self.navigationController pushViewController:controller animated:YES];
     //    PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     //    PGDatePicker *datePicker = datePickManager.datePicker;

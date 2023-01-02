@@ -59,16 +59,23 @@ class MyFristSwift: UIViewController,FTVCdelegte,SelfAware{
         self.view.addSubview(newButton)
         LGJLog("misdf")
         
-//        var myWeb = UIWebView.init()
-//        myWeb = UIWebView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
-//                //下划线对于普通变量,用于忽略变量
-//        var strstr = String()
-//
-//        strstr = foofoo(s1: "Hello", s2: "World")
-//        //调用方式可以不加第二个函数的外部函数名：
-//        strstr = foo(s1: "Hello", "123")
-//
-//        strstr = myWeb.stringByEvaluatingJavaScript(from: "navigator.userAgent") as Any as! String
+//        var newImage :UIImage?
+        var newImage = UIImage(named: "TestImage")
+        newImage = cornerImage(with: CGSize(width: 50, height: 50), fill: UIColor.yellow) { image in
+            newButton.setImage(image, for: .normal)
+        } ?? UIImage()
+        
+        
+        var myWeb = UIWebView.init()
+        myWeb = UIWebView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+        //下划线对于普通变量,用于忽略变量
+        var strstr = String()
+
+        strstr = foofoo(s1: "Hello", s2: "World")
+        //调用方式可以不加第二个函数的外部函数名：
+        strstr = foo(s1: "Hello", "123")
+
+        strstr = myWeb.stringByEvaluatingJavaScript(from: "navigator.userAgent") as Any as! String
         //as 用于转换类型 Any可以表示任何类型，包括方法类型（function types）
         print("输出的字符串 \(strstr)" as Any)
         //inout 的使用
